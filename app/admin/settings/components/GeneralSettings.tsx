@@ -13,11 +13,10 @@ export default function GeneralSettings() {
   const [isSaving, setIsSaving] = useState(false)
   const { register, handleSubmit, formState: { errors }, setValue } = useForm()
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     setIsSaving(true)
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
-    console.log(data)
     setIsSaving(false)
   }
 
@@ -34,14 +33,14 @@ export default function GeneralSettings() {
             icon={Text}
           label="اسم الموقع"
           {...register("siteName", { required: "هذا الحقل مطلوب" })}
-          error={errors.siteName?.message}
+          error={errors.siteName?.message as string}
         />
         <Dropdown
           label="المنطقة الزمنية"
           options={timezoneOptions}
-          value={register("timezone").value}
+          value={"Asia/Riyadh"}
           onChange={(value) => setValue("timezone", value)}
-          error={errors.timezone?.message}
+          error={errors.timezone?.message as string}
         />
         <FileUpload
           label="شعار الموقع"
