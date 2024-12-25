@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { Edit, ArrowLeft, CheckCircle2 } from 'lucide-react'
+    import { Edit, ArrowLeft, CheckCircle2 } from 'lucide-react'
 import { Tag } from '@/app/components/ui/Tag'
 import { Breadcrumb } from '@/app/components/ui/Breadcrumb'
 import { Button } from '@/app/components/ui/Button'

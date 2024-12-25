@@ -82,7 +82,7 @@ export default function ProjectsGrid() {
   const [projects, setProjects] = useState(projectsData)
   const [filter, setFilter] = useState("الكل")
   const [searchTerm, setSearchTerm] = useState("")
-  const [hoveredProject, setHoveredProject] = useState(null)
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
@@ -162,7 +162,7 @@ export default function ProjectsGrid() {
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group relative overflow-hidden rounded-lg shadow-md bg-white"
-                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseEnter={() => setHoveredProject(project?.id)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
                 <div className="relative h-[300px] md:h-[400px]">

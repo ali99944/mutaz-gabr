@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import { Input } from '@/app/components/ui/Input'
 import { TextArea } from '@/app/components/ui/TextArea'
 import { Button } from '@/app/components/ui/Button'
@@ -12,11 +12,9 @@ export default function ContactSettings() {
   const [isSaving, setIsSaving] = useState(false)
   const { register, handleSubmit, formState: { errors } } = useForm()
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     setIsSaving(true)
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
-    console.log(data)
     setIsSaving(false)
   }
 
@@ -33,18 +31,18 @@ export default function ContactSettings() {
               message: "عنوان بريد إلكتروني غير صالح"
             }
           })}
-          error={errors.email?.message}
+          error={errors.email?.message as string}
         />
         <Input
           label="رقم الهاتف"
           icon={Phone}
           {...register("phone", { required: "هذا الحقل مطلوب" })}
-          error={errors.phone?.message}
+          error={errors.phone?.message as string}
         />
         <TextArea
           label="العنوان"
           {...register("address", { required: "هذا الحقل مطلوب" })}
-          error={errors.address?.message}
+          error={errors.address?.message as string}
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

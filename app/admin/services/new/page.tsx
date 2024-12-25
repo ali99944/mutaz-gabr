@@ -44,11 +44,11 @@ export default function AddService() {
     setMainImage(file)
   }
 
-  const handlePortfolioImagesUpload = (files: FileList | null) => {
-    if (files) {
-      setPortfolioImages(Array.from(files))
-    }
-  }
+//   const handlePortfolioImagesUpload = (files: FileList | null) => {
+//     if (files) {
+//       setPortfolioImages(Array.from(files))
+//     }
+//   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

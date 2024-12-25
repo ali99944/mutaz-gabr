@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { FaStar, FaUser } from 'react-icons/fa'
@@ -191,7 +191,7 @@ export default function ServiceDetails() {
                     <FaStar key={i} className="text-[#DF2935]" />
                   ))}
                 </div>
-                <p className="italic text-gray-100">"{testimonial.comment}"</p>
+                <p className="italic text-gray-100">&quot;{testimonial.comment}&quot;</p>
               </motion.div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { Loader2, TypeIcon as type, LucideIcon } from 'lucide-react'
+import { Loader2, LucideIcon } from 'lucide-react'
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center rounded-md font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none',

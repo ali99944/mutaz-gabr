@@ -56,11 +56,11 @@ export default function AddProject() {
     setMainImage(file)
   }
 
-  const handleGalleryImagesUpload = (files: FileList | null) => {
-    if (files) {
-      setGalleryImages(Array.from(files))
-    }
-  }
+//   const handleGalleryImagesUpload = (files: FileList | null) => {
+//     if (files) {
+//       setGalleryImages(Array.from(files))
+//     }
+//   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

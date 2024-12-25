@@ -1,5 +1,5 @@
 import React from 'react'
-import { TypeIcon as type, LucideIcon } from 'lucide-react'
+import { LucideIcon } from 'lucide-react'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string

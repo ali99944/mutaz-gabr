@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
-import Link from 'next/link'
+import { useMemo, useState } from 'react'
 import { Plus, Search, Edit, Trash2, Shapes } from 'lucide-react'
 import { Breadcrumb } from '@/app/components/ui/Breadcrumb'
 import { Button } from '@/app/components/ui/Button'
@@ -57,12 +56,12 @@ export default function AdminCategories({ initialCategories }: { initialCategori
     },
   ]
 
-  const filteredCategories = useMemo(() => 
-    categories.filter(category =>
-      category.name.toLowerCase().includes(searchTerm.toLowerCase())
-    ), 
-    [categories, searchTerm]
-  );
+//   const filteredCategories = useMemo(() => 
+//     categories.filter(category =>
+//       category.name.toLowerCase().includes(searchTerm.toLowerCase())
+//     ), 
+//     [categories, searchTerm]
+//   );
 
   const [isAddingCategory, setIsAddingCategory] = useState(false)
   const [isEditingCategory, setIsEditingCategory] = useState(false)
@@ -94,11 +93,17 @@ export default function AdminCategories({ initialCategories }: { initialCategori
         setIsAddingCategory(false)
         
     } catch (error) {
+        console.log(error);
+        
         toast.error('حدث خطأ اثناء اضافة الفئة')
     }
   }
 
-  const handleCategoryUpdate = () => {
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Closes the edit category modal
+ */
+/******  3e46dda7-8cb8-4e7d-b9fe-ad464049492e  *******/  const handleCategoryUpdate = () => {
     setIsEditingCategory(false)
   }
 

@@ -54,7 +54,7 @@ export function DataTable<T>({
         <table className="w-full text-right">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              {columns.map((column, index) => (
+              {columns.map((column) => (
                 <th
                   key={column.key || column.dataIndex?.toString()}
                   className="px-6 py-3 text-sm font-medium text-gray-500 uppercase tracking-wider"
@@ -79,7 +79,7 @@ export function DataTable<T>({
                     hoverable ? 'hover:bg-gray-50 transition-colors' : ''
                   }`}
                 >
-                  {columns.map((column, colIndex) => {
+                  {columns.map((column) => {
                     const value = getNestedValue(row, column?.dataIndex as string)
                     return (
                       <td

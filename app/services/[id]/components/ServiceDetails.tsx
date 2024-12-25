@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
-import { FaRuler, FaPaintBrush, FaTools, FaClock, FaAward, FaImages } from 'react-icons/fa'
+import { FaImages } from 'react-icons/fa'
 import TestimonialCard from '@/app/components/Testimonial'
 import { FaKitchenSet } from 'react-icons/fa6'
 

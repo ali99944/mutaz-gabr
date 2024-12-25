@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRight, Calendar, Edit, Grid, Home, LayoutGrid, MapPin, Ruler, Timer, User, Phone, Mail, Clock, CheckCircle2, AlertCircle, FileText, ImageIcon, Briefcase, ArrowDown } from 'lucide-react'
+import { Calendar, Edit, Home, MapPin, Ruler, Timer, User, Phone, Mail, Clock, CheckCircle2, AlertCircle, FileText, Briefcase, ArrowDown } from 'lucide-react'
 import { Button } from '@/app/components/ui/Button'
 import { Breadcrumb } from '@/app/components/ui/Breadcrumb'
 import { Tag } from '@/app/components/ui/Tag'

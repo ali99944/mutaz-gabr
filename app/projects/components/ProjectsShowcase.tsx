@@ -301,14 +301,14 @@ export default function ProjectsShowcase() {
 
     sectionRefs.current.forEach((ref) => {
       if (ref.current) {
-        observer.observe(ref.current)
+        observer.observe(ref.current as Element)
       }
     })
 
     return () => {
       sectionRefs.current.forEach((ref) => {
         if (ref.current) {
-          observer.unobserve(ref.current)
+          observer.unobserve(ref.current as Element)
         }
       })
     }
@@ -331,7 +331,7 @@ export default function ProjectsShowcase() {
           {categories.map((category, index) => (
             <motion.div
               key={category}
-              ref={sectionRefs.current[index]}
+              ref={sectionRefs.current[index] as React.RefObject<HTMLDivElement>}
               id={category}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

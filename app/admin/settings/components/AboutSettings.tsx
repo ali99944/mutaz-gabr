@@ -21,7 +21,7 @@ interface AboutFormData {
 
 export default function AboutSettings() {
   const [isSaving, setIsSaving] = useState(false)
-  const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm<AboutFormData>({
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<AboutFormData>({
     defaultValues: {
       companyName: 'معتز جابر للتصميم الداخلي',
       mission: 'نسعى لتحويل المساحات إلى تجارب معمارية استثنائية تجمع بين الجمال والوظيفة',

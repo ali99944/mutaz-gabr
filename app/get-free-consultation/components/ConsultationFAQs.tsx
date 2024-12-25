@@ -46,7 +46,12 @@ const itemVariants: Variants = {
   }
 }
 
-const FAQ = ({ faq, index, activeIndex, setActiveIndex }: { faq: any, index: number, activeIndex: number | null, setActiveIndex: (index: number | null) => void }) => {
+interface IFAQ {
+  question: string
+  answer: string
+}
+
+const FAQ = ({ faq, index, activeIndex, setActiveIndex }: { faq: IFAQ, index: number, activeIndex: number | null, setActiveIndex: (index: number | null) => void }) => {
   const isOpen = index === activeIndex
 
   return (

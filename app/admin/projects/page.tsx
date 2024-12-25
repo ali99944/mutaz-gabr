@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Edit, Trash2, Eye, Plus, Search } from 'lucide-react'
+import { Edit, Trash2, Eye, Plus } from 'lucide-react'
 import { Button } from '@/app/components/ui/Button'
 import { DataTable } from '@/app/components/ui/DataTable'
 import { Column } from '@/app/components/ui/DataTable/types'
@@ -26,7 +26,7 @@ const statusMap = {
 }
 
 export default function ProjectsPage() {
-  const [loading, setLoading] = useState(false)
+  const [loading] = useState(false)
 
   const columns:Column<Project>[] = [
     {

@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 import Image from 'next/image'
 import { ChevronLeft, Copyright } from 'lucide-react'
 

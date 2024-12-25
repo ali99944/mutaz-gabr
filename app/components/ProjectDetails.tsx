@@ -1,10 +1,9 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { FaRuler, FaPaintBrush, FaClock, FaAward, FaTools, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { motion, useScroll, AnimatePresence } from 'framer-motion'
+import { FaRuler, FaPaintBrush, FaAward, FaTools, FaStar } from 'react-icons/fa'
 
 // Enhanced project data (unchanged)
 const projectData = {
@@ -72,13 +71,9 @@ const projectData = {
 }
 
 export default function ProjectDetailsSection() {
-  const [activeTab, setActiveTab] = useState(0)
-  const [currentImage, setCurrentImage] = useState(0)
+  const [currentImage] = useState(0)
   const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  })
+
 
   return (
     <>
@@ -238,7 +233,7 @@ export default function ProjectDetailsSection() {
                       />
                     ))}
                   </div>
-                  <p className="text-gray-300 italic">"{projectData.client.review}"</p>
+                  <p className="text-gray-300 italic">&quot;{projectData.client.review}&quot;</p>
                 </div>
               </div>
 
