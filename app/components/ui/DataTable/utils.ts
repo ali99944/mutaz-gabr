@@ -1,3 +1,4 @@
+
 import { Column } from "./types";
 
 export const getNestedValue = (obj: undefined, path: string) => {
