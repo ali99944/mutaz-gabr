@@ -80,13 +80,13 @@ export function DataTable<T>({
                   }`}
                 >
                   {columns.map((column) => {
-                    const value = getNestedValue(row as any, column?.dataIndex as string)
+                    const value = getNestedValue(row as T, column?.dataIndex as string)
                     return (
                       <td
                         key={`${rowIndex}-${column.key || column?.dataIndex?.toString()}`}
                         className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap"
                       >
-                        {column.render ? column.render(value as any, row) : value}
+                        {column.render ? column.render(value, row) : value as React.ReactNode}
                       </td>
                     )
                   })}

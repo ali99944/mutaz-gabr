@@ -11,7 +11,7 @@ export interface Column<T> {
   dataIndex?: NestedKeyOf<T>
   key?: string
   width?: number | string
-  render?: (value: undefined, record: T) => React.ReactNode
+  render?: (value: unknown, record: T) => React.ReactNode
   sortable?: boolean
   searchable?: boolean
 }

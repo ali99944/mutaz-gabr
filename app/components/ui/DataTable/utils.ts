@@ -1,8 +1,7 @@
-
 import { Column } from "./types";
 
-export const getNestedValue = (obj: undefined, path: string) => {
-    return path?.split('.').reduce((acc: any, part) => {
+export const getNestedValue = (obj: unknown, path: string) => {
+    return path?.split('.').reduce((acc, part) => {
       if (acc === null || acc === undefined) return '';
       return acc[part];
     }, obj);
@@ -12,7 +11,7 @@ export const getNestedValue = (obj: undefined, path: string) => {
     return columns.some(column => {
       if (!column.searchable) return false;
       
-      const value = getNestedValue(item as any, column.dataIndex as string);
+      const value = getNestedValue(item as unknown as T, column.dataIndex as string);
       if (!value) return false;
       
       return value.toString().toLowerCase().includes(searchTerm.toLowerCase());
