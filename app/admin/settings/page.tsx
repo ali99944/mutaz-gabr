@@ -9,7 +9,7 @@ import GeneralSettings from './components/GeneralSettings'
 import PolicySettings from './components/PolicySettings'
 import SEOSettings from './components/SeoSettings'
 
-const tabComponents = {
+const tabComponents: Record<string, () => JSX.Element> = {
   general: GeneralSettings,
   contact: ContactSettings,
   about: AboutSettings,
