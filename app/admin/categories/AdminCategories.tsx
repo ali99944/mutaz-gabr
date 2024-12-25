@@ -115,6 +115,8 @@ export default function AdminCategories({ initialCategories }: { initialCategori
 
         setIsDeletingCategory(false)
     } catch (error) {
+        console.log(error);
+        
         toast.error('حدث خطأ اثناء حذف الفئة')
     }
   }

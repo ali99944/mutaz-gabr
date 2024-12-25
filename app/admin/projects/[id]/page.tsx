@@ -73,7 +73,6 @@ const statusStyles = {
 
 export default function ProjectDetails() {
   const [selectedImage, setSelectedImage] = useState(0)
-  const status = statusStyles[projectData.status as keyof typeof statusStyles]
 
   return (
     <div className="min-h-screen bg-gray-100">
