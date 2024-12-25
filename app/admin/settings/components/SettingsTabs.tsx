@@ -8,7 +8,7 @@ const tabs = [
   { id: 'seo', label: 'تحسين محركات البحث' },
 ]
 
-export default function SettingsTabs({ activeTab, setActiveTab }) {
+export default function SettingsTabs({ activeTab, setActiveTab }: { activeTab: string; setActiveTab: (tab: string) => void }) {
   return (
     <div className="flex space-x-4 mb-8 border-b border-gray-200">
       {tabs.map((tab) => (
