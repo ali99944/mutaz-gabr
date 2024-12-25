@@ -55,8 +55,8 @@ export default function Page() {
             className="absolute rounded-full bg-white"
             initial={{
               opacity: Math.random(),
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * 1024,
+              y: Math.random() * 678,
               scale: Math.random() * 0.5 + 0.5,
             }}
             animate={{
