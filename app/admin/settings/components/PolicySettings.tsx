@@ -12,11 +12,10 @@ export default function PolicySettings() {
   const [isSaving, setIsSaving] = useState(false)
   const { handleSubmit, setValue } = useForm()
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     setIsSaving(true)
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
-    console.log(data)
     setIsSaving(false)
   }
 
