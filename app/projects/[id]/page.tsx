@@ -6,7 +6,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
   return (
     <>
         <Navbar />
-        <ProjectDetails id={params.id} />
+        <ProjectDetails />
         <Footer />
     </>
   )
