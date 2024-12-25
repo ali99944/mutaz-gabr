@@ -1,0 +1,18 @@
+.admin-heading-xl {
+    @apply text-3xl font-medium text-gray-900 leading-tight;
+  }
+  .admin-heading-lg {
+    @apply text-2xl font-medium text-gray-800 leading-snug;
+  }
+  .admin-heading-md {
+    @apply text-xl font-medium text-gray-800 leading-snug;
+  }
+  .admin-text-lg {
+    @apply text-lg text-gray-700 leading-relaxed;
+  }
+  .admin-text-base {
+    @apply text-base text-gray-600 leading-relaxed;
+  }
+  .admin-text-sm {
+    @apply text-sm text-gray-500 leading-relaxed;
+  }
