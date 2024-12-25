@@ -14,9 +14,9 @@ import { toast } from 'react-toastify'
 import { Column } from '@/app/components/ui/DataTable/types'
 
 
-export default function Page({ initialCategories }: { initialCategories: Category[] }) {
+export default function Page() {
   const [searchTerm, setSearchTerm] = useState('')
-  const [categories, setCategories] = useState<Category[]>(initialCategories)
+  const [categories, setCategories] = useState<Category[]>([])
 
   const getCategories = async () => {
     try {
