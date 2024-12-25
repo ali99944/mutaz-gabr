@@ -19,11 +19,11 @@ interface Project {
   createdAt: string
 }
 
-const statusMap = {
-  completed: { label: 'مكتمل', class: 'bg-green-100 text-green-800' },
-  in_progress: { label: 'قيد التنفيذ', class: 'bg-yellow-100 text-yellow-800' },
-  pending: { label: 'قيد المراجعة', class: 'bg-blue-100 text-blue-800' },
-}
+// const statusMap = {
+//   completed: { label: 'مكتمل', class: 'bg-green-100 text-green-800' },
+//   in_progress: { label: 'قيد التنفيذ', class: 'bg-yellow-100 text-yellow-800' },
+//   pending: { label: 'قيد المراجعة', class: 'bg-blue-100 text-blue-800' },
+// }
 
 export default function ProjectsPage() {
   const [loading] = useState(false)
