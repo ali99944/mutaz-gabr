@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react'
 import Image from 'next/image'
-import { motion, useScroll, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FaRuler, FaPaintBrush, FaAward, FaTools, FaStar } from 'react-icons/fa'
 
 // Enhanced project data (unchanged)

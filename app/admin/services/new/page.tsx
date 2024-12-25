@@ -29,7 +29,7 @@ export default function AddService() {
     process: '',
   })
   const [mainImage, setMainImage] = useState<File | null>(null)
-  const [portfolioImages, setPortfolioImages] = useState<File[]>([])
+  const [portfolioImages] = useState<File[]>([])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target

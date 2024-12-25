@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
-import { FaSearch, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaSearch, FaTimes} from 'react-icons/fa'
 
 // Enhanced mock data for projects
 const projectsData = [

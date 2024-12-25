@@ -1,6 +1,6 @@
 import { Column } from "./types";
 
-export const getNestedValue = (obj: any, path: string) => {
+export const getNestedValue = (obj: undefined, path: string) => {
     return path?.split('.').reduce((acc, part) => {
       if (acc === null || acc === undefined) return '';
       return acc[part];

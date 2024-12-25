@@ -41,7 +41,7 @@ export default function AddProject() {
     clientEmail: '',
   })
   const [mainImage, setMainImage] = useState<File | null>(null)
-  const [galleryImages, setGalleryImages] = useState<File[]>([])
+  const [galleryImages] = useState<File[]>([])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
