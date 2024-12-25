@@ -32,18 +32,18 @@ export default function ProjectsPage() {
     {
       title: 'المشروع',
       dataIndex: 'title',
-      render: (value: string, record: Project) => (
+      render: (_, record: Project) => (
         <div className="flex items-center gap-3">
           <div className="relative w-12 h-12 rounded-lg overflow-hidden">
             <Image
               src={record.image}
-              alt={value}
+              alt={record.title}
               layout="fill"
               objectFit="cover"
             />
           </div>
           <div>
-            <div className="font-medium text-gray-900">{value}</div>
+            <div className="font-medium text-gray-900">{record.title}</div>
             <div className="text-sm text-gray-500">{record.category}</div>
           </div>
         </div>
@@ -59,16 +59,6 @@ export default function ProjectsPage() {
       title: 'المدة',
       dataIndex: 'duration',
       width: '15%',
-    },
-    {
-      title: 'الحالة',
-      dataIndex: 'status',
-      width: '15%',
-      render: (value: keyof typeof statusMap) => (
-        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${statusMap[value].class}`}>
-          {statusMap[value].label}
-        </span>
-      ),
     },
     {
       title: 'تاريخ الإنشاء',
