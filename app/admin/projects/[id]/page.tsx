@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Calendar, Edit, Home, MapPin, Ruler, Timer, User, Phone, Mail, Clock, CheckCircle2, AlertCircle, FileText, Briefcase, ArrowDown } from 'lucide-react'
+import { Calendar, Edit, Home, MapPin, Ruler, Timer, User, Phone, Mail, CheckCircle2, FileText, Briefcase, ArrowDown } from 'lucide-react'
 import { Button } from '@/app/components/ui/Button'
 import { Breadcrumb } from '@/app/components/ui/Breadcrumb'
 import { Tag } from '@/app/components/ui/Tag'
@@ -65,11 +65,11 @@ const projectData = {
   ]
 }
 
-const statusStyles = {
-  completed: { color: 'text-green-700 bg-green-50', icon: CheckCircle2 },
-  in_progress: { color: 'text-blue-700 bg-blue-50', icon: Clock },
-  pending: { color: 'text-yellow-700 bg-yellow-50', icon: AlertCircle },
-}
+// const statusStyles = {
+//   completed: { color: 'text-green-700 bg-green-50', icon: CheckCircle2 },
+//   in_progress: { color: 'text-blue-700 bg-blue-50', icon: Clock },
+//   pending: { color: 'text-yellow-700 bg-yellow-50', icon: AlertCircle },
+// }
 
 export default function ProjectDetails() {
   const [selectedImage, setSelectedImage] = useState(0)
