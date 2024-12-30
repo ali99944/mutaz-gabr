@@ -111,29 +111,33 @@ export default function Contact() {
                     <FaPhone className="text-2xl mt-1 text-[#DF2935]" />
                     <div>
                       <h4 className="font-semibold text-xl mb-1">الهاتف</h4>
-                      <p className="text-[#D3D3D3]">123-456-7890</p>
+                      <p className="text-[#D3D3D3] text-lg hover:underline">
+                        <a href="tel:+201270005969">+201270005969</a>
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
                     <FaEnvelope className="text-2xl mt-1 text-[#DF2935]" />
                     <div>
                       <h4 className="font-semibold text-xl mb-1">البريد الإلكتروني</h4>
-                      <p className="text-[#D3D3D3]">info@moatazgaber.com</p>
+                      <p className="text-[#D3D3D3] text-lg hover:underline">
+                        <a href="mailto:moataz.rabei.gabr2006@gmail.com">moataz.rabei.gabr2006@gmail.com</a>
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
                     <FaMapMarkerAlt className="text-2xl mt-1 text-[#DF2935]" />
                     <div>
                       <h4 className="font-semibold text-xl mb-1">العنوان</h4>
-                      <p className="text-[#D3D3D3]">شارع التحرير، القاهرة، مصر</p>
+                      <p className="text-[#D3D3D3] text-lg">الشروق سيتي امام فيلا نيو كايرو</p>
                     </div>
                   </li>
                 </ul>
               </div>
               <div className="mt-12 border-t border-[#D3D3D3]/20 pt-6">
                 <h4 className="font-semibold text-xl mb-4">ساعات العمل</h4>
-                <p className="text-[#D3D3D3]">الأحد - الخميس: 9 صباحًا - 6 مساءً</p>
-                <p className="text-[#D3D3D3]">الجمعة - السبت: 10 صباحًا - 4 مساءً</p>
+                <p className="text-[#D3D3D3] text-lg">الأحد - الخميس: 9 صباحًا - 6 مساءً</p>
+                <p className="text-[#D3D3D3] text-lg">الجمعة - السبت: 10 صباحًا - 4 مساءً</p>
               </div>
             </div>
           </div>

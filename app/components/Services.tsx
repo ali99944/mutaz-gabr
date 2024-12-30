@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { FaKitchenSet, FaPaintRoller, FaCouch, FaLightbulb, FaRuler, FaWrench } from 'react-icons/fa6'
+import { FaKitchenSet, FaCouch, FaRuler } from 'react-icons/fa6'
 import Image from 'next/image'
+import { Landmark, LandPlot } from 'lucide-react'
 
 export default function Services() {
   const [activeService, setActiveService] = useState(0)
@@ -12,39 +13,33 @@ export default function Services() {
   const services = [
     {
       icon: <FaKitchenSet className="text-4xl text-[#DF2935]" />,
-      title: 'تصميم المطابخ',
+      title: 'تصميم و تنفيذ مطابخ خشبية',
       description: 'نبتكر مطابخ عصرية تجمع بين الجمال والوظيفة، مع دمج أحدث التقنيات لتحسين تجربة الطهي وتسهيل الحياة اليومية.',
-      image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80'
+      image: '/assets/home/kitchen.jpg'
     },
     {
-      icon: <FaPaintRoller className="text-4xl text-[#DF2935]" />,
-      title: 'دهانات وتشطيبات',
+      icon: <LandPlot className="text-4xl text-[#DF2935]" />,
+      title: 'تصميم landscape',
       description: 'نستخدم أرقى أنواع الدهانات والتشطيبات لإضفاء لمسة فنية على جدرانك، مع ضمان الجودة والمتانة لسنوات قادمة.',
-      image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1000&q=80'
+      image: '/assets/home/balacony.jpg'
     },
     {
       icon: <FaCouch className="text-4xl text-[#DF2935]" />,
       title: 'تصميم داخلي',
       description: 'نحول رؤيتك إلى واقع من خلال تصميمات داخلية مبتكرة تعكس شخصيتك وتلبي احتياجاتك الفريدة.',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80'
+      image: '/assets/home/hall1.jpg'
     },
     {
-      icon: <FaLightbulb className="text-4xl text-[#DF2935]" />,
-      title: 'أنظمة إضاءة',
+      icon: <Landmark className="text-4xl text-[#DF2935]" />,
+      title: 'تخطيط الاراضي',
       description: 'نصمم حلول إضاءة ذكية تجمع بين الوظيفة والجمال، لخلق أجواء مثالية في كل ركن من منزلك.',
-      image: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1000&q=80'
+      image: '/assets/home/outside.jpg'
     },
     {
       icon: <FaRuler className="text-4xl text-[#DF2935]" />,
-      title: 'تخطيط المساحات',
+      title: 'اعداد الرسوم و المقايسات',
       description: 'نبتكر تخطيطات ذكية تضمن الاستفادة القصوى من كل مساحة في منزلك، مع مراعاة الراحة والجمال.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80'
-    },
-    {
-      icon: <FaWrench className="text-4xl text-[#DF2935]" />,
-      title: 'صيانة وتركيب',
-      description: 'نقدم خدمات صيانة وتركيب احترافية لضمان استمرار جمال وكفاءة منزلك على المدى الطويل.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80'
+      image: '/assets/home/living.jpg'
     },
   ]
 

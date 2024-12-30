@@ -10,56 +10,48 @@ const services = [
     name: 'تصميم المطابخ',
     description: 'نصمم مطابخ عصرية تجمع بين الأناقة والوظيفة، مع دمج أحدث التقنيات لتحسين تجربة الطهي وتسهيل الحياة اليومية.',
     image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/kitchen.svg',
   },
   {
     id: '2',
     name: 'تصميم غرف المعيشة',
     description: 'نبتكر مساحات معيشة مريحة وأنيقة تعكس شخصيتك وتوفر بيئة مثالية للاسترخاء والترفيه.',
     image: 'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/living-room.svg',
   },
   {
     id: '3',
     name: 'تصميم غرف النوم',
     description: 'نصمم غرف نوم هادئة ومريحة توفر الراحة المثالية وتعزز جودة النوم.',
     image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/bedroom.svg',
   },
   {
     id: '4',
     name: 'تصميم الحمامات',
     description: 'نبتكر حمامات أنيقة وعملية تجمع بين الراحة والفخامة لتوفير تجربة استجمام فريدة.',
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/bathroom.svg',
   },
   {
     id: '5',
     name: 'تصميم المكاتب',
     description: 'نصمم مساحات عمل محفزة وعملية لزيادة الإنتاجية والإبداع في بيئة العمل.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/office.svg',
   },
   {
     id: '6',
     name: 'تصميم الواجهات الخارجية',
     description: 'نبدع في تصميم واجهات خارجية جذابة تعزز المظهر العام للمبنى وتترك انطباعًا أول رائعًا.',
     image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/exterior.svg',
   },
   {
     id: '7',
     name: 'تصميم المساحات التجارية',
     description: 'نصمم مساحات تجارية جذابة وعملية تعزز تجربة العملاء وتدعم نمو الأعمال.',
     image: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/commercial.svg',
   },
   {
     id: '8',
     name: 'تصميم الحدائق والمساحات الخارجية',
     description: 'نبتكر حدائق ومساحات خارجية تمزج بين الجمال الطبيعي والتصميم الوظيفي لخلق واحات استرخاء مثالية.',
     image: 'https://images.unsplash.com/photo-1558293842-c0fd3db86157?auto=format&fit=crop&w=800&q=80',
-    icon: '/icons/landscape.svg',
   },
 ]
 
@@ -93,14 +85,7 @@ export default function ServicesList() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center">
-                  <div className="bg-white p-2 rounded-full mr-3">
-                    <Image
-                      src={service.icon}
-                      alt={`${service.name} icon`}
-                      width={24}
-                      height={24}
-                    />
-                  </div>
+
                   <h3 className="text-white text-xl font-bold">{service.name}</h3>
                 </div>
               </div>

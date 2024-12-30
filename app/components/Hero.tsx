@@ -7,9 +7,13 @@ import Link from 'next/link'
 import AppRoutes from '../constants/app_routes'
 
 const images = [
-  '/assets/images/kitchens/111.jpg',
-  '/assets/images/kitchens/44.jpg',
-  '/assets/images/kitchens/333.jpg',
+  '/assets/home/balace.jpg',
+  '/assets/home/balacony.jpg',
+  '/assets/home/hall1.jpg',
+  '/assets/home/kitchen.jpeg',
+  '/assets/home/kitchen.jpg',
+  '/assets/home/living.jpg',
+  '/assets/home/living2.jpg',
 ]
 
 export default function Hero() {
@@ -51,7 +55,7 @@ export default function Hero() {
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">معتز جبر</h1>
           <p className="text-xl md:text-2xl mb-8 mx-auto">
-            نبدع في تصميم وتنفيذ المطابخ والديكورات الداخلية لنحول مساحتك إلى تحفة فنية تعكس أسلوب حياتك
+            نبدع في تصميم وتنفيذ المطابخ والديكورات الداخلية و الخارجية و المطابخ الخشبية لنحول مساحتك إلى تحفة فنية تعكس أسلوب حياتك
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link legacyBehavior href={AppRoutes.getFreeConsultation}>

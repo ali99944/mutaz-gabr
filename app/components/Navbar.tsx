@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 flex-row-reverse">
-            <span className="text-2xl font-bold hidden sm:block">معتز جبر</span>
+            <span className="text-2xl font-bold hidden sm:block">Moataz Gabr</span>
             <Image
               src="/assets/images/logo.png"
               alt="Moataz Gabr Kitchens"
@@ -32,8 +32,7 @@ export default function Navbar() {
             >
               اتصل بنا
             </Link>
-            <Link href="/projects" className="hover:text-[#DF2935] transition-colors font-medium text-xl">مشاريعنا</Link>
-            <Link href="/gallery" className="hover:text-[#DF2935] transition-colors font-medium text-xl">معرض الأعمال</Link>
+            <Link href="/projects" className="hover:text-[#DF2935] transition-colors font-medium text-xl">معرض الأعمال</Link>
             <Link href="/services" className="hover:text-[#DF2935] transition-colors font-medium text-xl">خدماتنا</Link>
             <Link href="/" className="hover:text-[#DF2935] transition-colors font-medium text-xl">الرئيسية</Link>
           </div>

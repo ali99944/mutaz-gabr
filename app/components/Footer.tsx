@@ -1,6 +1,6 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 import Image from 'next/image'
-import { ChevronLeft, Copyright } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 p-4">
           <div>
             <div className="flex items-center justify-end flex-row-reverse mb-6">
-              <h3 className="text-3xl font-bold">معتز جبر</h3>
+              <h3 className="text-3xl font-bold">Moataz Gabr</h3>
               <Image
                 src="/assets/images/logo.png"
                 alt="Moataz Gabr Kitchens"
@@ -48,11 +48,11 @@ export default function Footer() {
           <div>
             <h4 className="text-2xl font-semibold mb-6">روابط سريعة</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="hover:text-[#DF2935] text-md transition-colors">الرئيسية</a></li>
-              <li><a href="#services" className="hover:text-[#DF2935] text-md transition-colors">خدماتنا</a></li>
-              <li><a href="#gallery" className="hover:text-[#DF2935] text-md transition-colors">معرض الأعمال</a></li>
-              <li><a href="#projects" className="hover:text-[#DF2935] text-md transition-colors">مشاريعنا</a></li>
-              <li><a href="#contact" className="hover:text-[#DF2935] text-md transition-colors">اتصل بنا</a></li>
+              <li><a href="#" className="hover:text-[#DF2935] text-lg transition-colors">الرئيسية</a></li>
+              <li><a href="#services" className="hover:text-[#DF2935] text-lg transition-colors">خدماتنا</a></li>
+              <li><a href="#gallery" className="hover:text-[#DF2935] text-lg transition-colors">معرض الأعمال</a></li>
+              <li><a href="#projects" className="hover:text-[#DF2935] text-lg transition-colors">مشاريعنا</a></li>
+              <li><a href="#contact" className="hover:text-[#DF2935] text-lg transition-colors">اتصل بنا</a></li>
             </ul>
           </div>
           <div>
@@ -60,28 +60,29 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
                 <ChevronLeft className="text-white text-xl" />
-                <span>123-456-7890</span>
+                <a href="tel:+201270005969">+201270005969</a>
+              </li>
+              <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
+                <ChevronLeft className="text-white text-xl hover:underline" />
+                <a href="mailto:moataz.rabei.gabr2006@gmail.com">moataz.rabei.gabr2006@gmail.com</a>
               </li>
               <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
                 <ChevronLeft className="text-white text-xl" />
-                <span>info@moatazgaber.com</span>
-              </li>
-              <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
-                <ChevronLeft className="text-white text-xl" />
-                <span>شارع التحرير، القاهرة، مصر</span>
+                <span>الشروق سيتي امام فيلا نيو كايرو</span>
               </li>
             </ul>
           </div>
           <div>
             <h4 className="text-2xl font-semibold mb-6">ساعات العمل</h4>
-            <p className="mb-2">الأحد - الخميس: 9 صباحًا - 6 مساءً</p>
-            <p>الجمعة - السبت: 10 صباحًا - 4 مساءً</p>
+            <p className="mb-2 text-lg">الأحد - الخميس: 9 صباحًا - 6 مساءً</p>
+            <p className='text-lg'>الجمعة - السبت: 10 صباحًا - 4 مساءً</p>
           </div>
         </div>
         <div className="mt-12 p-4 border-t-2 border-[#D3D3D3]/40 text-center">
           <p className='text-xl flex justify-center items-center flex-row-reverse space-x-4'>
+            <span>السجل التجاري: 157438</span>
+            <span>الرقم الضريبي: 609-129-007</span>
             <span>{new Date().getFullYear()} معتز جبر للمطابخ. جميع الحقوق محفوظة.</span> 
-            <Copyright />
           </p>
         </div>
       </div>

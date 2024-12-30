@@ -6,37 +6,37 @@ import { motion, useInView } from 'framer-motion'
 
 const projects = [
   { 
-    src: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80", 
+    src: "/assets/home/kitchen.jpg", 
     alt: "مطبخ عصري فاخر",
     title: "مطبخ الأحلام العصري",
     description: "تصميم مطبخ حديث يجمع بين الأناقة والوظائف العملية"
   },
   { 
-    src: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1000&q=80", 
+    src: "/assets/home/living2.jpg", 
     alt: "غرفة معيشة أنيقة",
     title: "غرفة معيشة فاخرة",
     description: "مساحة معيشة مريحة تجمع بين الرفاهية والراحة"
   },
   { 
-    src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80", 
+    src: "/assets/home/hall1.jpg", 
     alt: "حمام فاخر",
     title: "واحة الاسترخاء",
     description: "حمام فاخر يوفر تجربة سبا في منزلك"
   },
   { 
-    src: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1000&q=80", 
+    src: "/assets/home/living3.jpg", 
     alt: "غرفة نوم هادئة",
     title: "ملاذ النوم الهادئ",
     description: "غرفة نوم مصممة للراحة والاسترخاء التام"
   },
   { 
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80", 
+    src: "/assets/home/outside.jpg", 
     alt: "مساحة عمل مبتكرة",
     title: "مكتب المستقبل",
     description: "مساحة عمل عصرية تعزز الإنتاجية والإبداع"
   },
   { 
-    src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80", 
+    src: "/assets/home/balacony.jpg", 
     alt: "ديكور داخلي مميز",
     title: "لمسة الفخامة",
     description: "تصميم داخلي يجمع بين الكلاسيكية والحداثة"
