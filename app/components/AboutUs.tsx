@@ -51,7 +51,7 @@ export default function AboutUs() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold mb-4 text-[#004851]">خبرة تمتد لأكثر من 20 عامًا</h3>
+            <h3 className="text-3xl font-bold mb-4 text-[#004851]">خبرة تمتد لأكثر من 18 عامًا</h3>
             <p className="text-lg text-gray-600">
               منذ تأسيسنا في عام 2006، قمنا بتحويل آلاف المنازل والمكاتب إلى أماكن استثنائية. نحن نؤمن بأن كل مساحة لها قصة فريدة، ومهمتنا هي مساعدتك في سرد هذه القصة من خلال التصميم والتنفيذ المتقن.
             </p>
