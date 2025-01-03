@@ -47,7 +47,7 @@ const FloatingWhatsAppButton = () => {
             <h3 className="text-lg font-semibold text-[#4A1D1F] mb-2">تواصل معنا عبر واتساب</h3>
             <p className="text-gray-600 mb-4">نحن هنا لمساعدتك! راسلنا على واتساب للإجابة على استفساراتك.</p>
             <a
-              href="https://wa.me/01270005969"
+              href="https://wa.me/+201270005969"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-[#25D366] text-white text-center py-2 px-4 rounded-full font-semibold hover:bg-[#128C7E] transition-colors duration-300"
