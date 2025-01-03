@@ -81,9 +81,11 @@ export default function Gallery() {
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                 <p className="text-[#D3D3D3] mb-4">{project.description}</p>
-                <button className="bg-[#DF2935] text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300 shadow-md">
-                  عرض التفاصيل
-                </button>
+                <a href={`/projects/${index + 1}`}>
+                  <button className="bg-[#DF2935] text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300 shadow-md">
+                    عرض التفاصيل
+                  </button>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -94,9 +96,11 @@ export default function Gallery() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-12"
         >
+          <a href="/projects">
           <button className="bg-[#DF2935] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow-md">
             عرض جميع المشاريع
           </button>
+          </a>
         </motion.div>
       </div>
     </section>

@@ -3,6 +3,7 @@ const AppRoutes = Object.freeze({
     about: '/about',
     services: '/services',
     gallery: '/gallery',
+    projects: '/projects',
     contact: '/contact',
     terms: '/terms',
     privacy: '/privacy',

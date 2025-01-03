@@ -66,12 +66,14 @@ export default function Hero() {
                 احجز استشارة مجانية
               </motion.button>
             </Link>
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-[#D3D3D3] text-[#D3D3D3] font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#D3D3D3] hover:text-[#004851] transition duration-300 shadow-md"
-            >
-              تصفح أعمالنا
-            </motion.button>
+            <a href={AppRoutes.projects}>
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                className="bg-transparent border-2 border-[#D3D3D3] text-[#D3D3D3] font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#D3D3D3] hover:text-[#004851] transition duration-300 shadow-md"
+              >
+                تصفح أعمالنا
+              </motion.button>
+            </a>
           </div>
         </motion.div>
       </div>

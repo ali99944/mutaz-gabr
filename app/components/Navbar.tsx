@@ -16,7 +16,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2 flex-row-reverse">
             <span className="text-2xl font-bold hidden sm:block">Moataz Gabr</span>
             <Image
-              src="/assets/images/logo.png"
+              src="/assets/images/studio.png"
               alt="Moataz Gabr Kitchens"
               width={50}
               height={50}

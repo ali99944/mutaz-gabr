@@ -1,6 +1,6 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa'
+import { FaFacebookF, FaWhatsapp } from 'react-icons/fa'
 import Image from 'next/image'
-import { ChevronLeft } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex items-center justify-end flex-row-reverse mb-6">
               <h3 className="text-3xl font-bold">Moataz Gabr</h3>
               <Image
-                src="/assets/images/logo.png"
+                src="/assets/images/studio.png"
                 alt="Moataz Gabr Kitchens"
                 width={80}
                 height={80}
@@ -31,16 +31,10 @@ export default function Footer() {
               نحن متخصصون في تصميم وتنفيذ المطابخ والديكورات الداخلية بأعلى مستويات الجودة والإبداع
             </p>
             <div className="flex space-x-4 flex-row-reverse justify-end">
-              <a href="#" className="w-10 h-10 rounded-full bg-[#DF2935] flex items-center justify-center hover:bg-opacity-80 transition duration-300">
+              <a target="_blank" href="https://www.facebook.com/MoatazGabrDesignStudio?mibextid=ZbWKwL" className="w-10 h-10 rounded-full bg-[#DF2935] flex items-center justify-center hover:bg-opacity-80 transition duration-300">
                 <FaFacebookF className='text-2xl' />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#DF2935] flex items-center justify-center hover:bg-opacity-80 transition duration-300">
-                <FaInstagram className='text-2xl' />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#DF2935] flex items-center justify-center hover:bg-opacity-80 transition duration-300">
-                <FaTwitter className='text-2xl' />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#DF2935] flex items-center justify-center hover:bg-opacity-80 transition duration-300">
+              <a target="_blank" href="https://wa.me/01270005969" className="w-10 h-10 rounded-full bg-[#DF2935] flex items-center justify-center hover:bg-opacity-80 transition duration-300">
                 <FaWhatsapp className='text-2xl' />
               </a>
             </div>
@@ -59,15 +53,15 @@ export default function Footer() {
             <h4 className="text-2xl font-semibold mb-6">تواصل معنا</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
-                <ChevronLeft className="text-white text-xl" />
-                <a href="tel:+201270005969">+201270005969</a>
+                <Phone className="text-white text-xl" />
+                <a href="tel:+201270005969">01270005969</a>
               </li>
               <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
-                <ChevronLeft className="text-white text-xl hover:underline" />
+                <Mail className="text-white text-xl hover:underline" />
                 <a href="mailto:moataz.rabei.gabr2006@gmail.com">moataz.rabei.gabr2006@gmail.com</a>
               </li>
               <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
-                <ChevronLeft className="text-white text-xl" />
+                <MapPin className="text-white text-xl" />
                 <span>الشروق سيتي امام فيلا نيو كايرو</span>
               </li>
             </ul>
@@ -78,11 +72,15 @@ export default function Footer() {
             <p className='text-lg'>الجمعة - السبت: 10 صباحًا - 4 مساءً</p>
           </div>
         </div>
-        <div className="mt-12 p-4 border-t-2 border-[#D3D3D3]/40 text-center">
-          <p className='text-xl flex justify-center items-center flex-row-reverse space-x-4'>
-            <span>السجل التجاري: 157438</span>
-            <span>الرقم الضريبي: 609-129-007</span>
-            <span>{new Date().getFullYear()} معتز جبر للمطابخ. جميع الحقوق محفوظة.</span> 
+        <div className="mt-12 p-4 border-t-2 border-[#D3D3D3]/40 text-center sm:flex sm:justify-center sm:flex-row sm:space-x-4 sm:items-center">
+          <p className='text-xl'>
+            <span className="sm:block sm:text-center">السجل التجاري: 609-129-007</span>
+          </p>
+          <p className='text-xl'>
+            <span className="sm:block sm:text-center">الرقم الضريبي: 157438</span>
+          </p>
+          <p className='text-xl'>
+            <span className="sm:block sm:text-center">{new Date().getFullYear()} معتز جبر للمطابخ. جميع الحقوق محفوظة.</span> 
           </p>
         </div>
       </div>
