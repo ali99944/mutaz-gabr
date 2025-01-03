@@ -62,7 +62,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 transition duration-300 hover:-translate-x-1 cursor-pointer">
                 <MapPin className="text-white text-xl" />
-                <span>الشروق سيتي امام فيلا نيو كايرو</span>
+                <span>مدينة الشروق..فيلا القوات المسلحة.. الحي التاسع..فيلا ١١٢</span>
               </li>
             </ul>
           </div>
@@ -74,10 +74,10 @@ export default function Footer() {
         </div>
         <div className="mt-12 p-4 border-t-2 border-[#D3D3D3]/40 text-center sm:flex sm:justify-center sm:flex-row sm:space-x-4 sm:items-center">
           <p className='text-xl'>
-            <span className="sm:block sm:text-center">السجل التجاري: 609-129-007</span>
+            <span className="sm:block sm:text-center">السجل التجاري: 157438</span>
           </p>
           <p className='text-xl'>
-            <span className="sm:block sm:text-center">الرقم الضريبي: 157438</span>
+            <span className="sm:block sm:text-center">الرقم الضريبي: 609-129-007</span>
           </p>
           <p className='text-xl'>
             <span className="sm:block sm:text-center">{new Date().getFullYear()} معتز جبر للمطابخ. جميع الحقوق محفوظة.</span> 

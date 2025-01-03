@@ -71,7 +71,9 @@ export default function Services() {
                   className="transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">اقرأ المزيد</span>
+                  <a href={`/services/${index + 1}`}>
+                    <span className="text-white text-lg font-semibold">اقرأ المزيد</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -79,12 +81,14 @@ export default function Services() {
         </div>
       </div>
       <div className="mt-12 text-center">
+        <a href="/services">
         <button 
           className="bg-[#DF2935] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow-md"
           onClick={() => {/* Add functionality to show more details or navigate to a services page */}}
         >
           استكشف جميع خدماتنا
         </button>
+        </a>
       </div>
     </section>
   )

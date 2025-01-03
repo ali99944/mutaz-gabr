@@ -1,6 +1,7 @@
 import { Cairo } from 'next/font/google'
 import './globals.css'
 import { Bounce, ToastContainer } from 'react-toastify'
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton'
 
 const cairo = Cairo({ subsets: ['arabic'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           theme="light"
           transition={Bounce}
         />
+        <FloatingWhatsAppButton />
       </body>
     </html>
   )
