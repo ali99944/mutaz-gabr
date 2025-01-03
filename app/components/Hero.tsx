@@ -55,7 +55,7 @@ export default function Hero() {
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">معتز جبر</h1>
           <p className="text-xl md:text-2xl mb-8 mx-auto">
-            نبدع في تصميم وتنفيذ المطابخ والديكورات الداخلية و الخارجية و المطابخ الخشبية لنحول مساحتك إلى تحفة فنية تعكس أسلوب حياتك
+            نبدع في تصميم وتنفيذ الديكورات الداخلية و الخارجية و المطابخ الخشبية لنحول مساحتك إلى تحفة فنية تعكس أسلوب حياتك
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link legacyBehavior href={AppRoutes.getFreeConsultation}>
