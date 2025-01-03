@@ -57,25 +57,18 @@ export default function Navbar() {
               الرئيسية
             </Link>
             <Link 
-              href="#services" 
+              href="/services" 
               className="block py-3 px-4 hover:bg-[#004851] rounded-lg transition-colors text-lg font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               خدماتنا
             </Link>
             <Link 
-              href="#gallery" 
+              href="/projects" 
               className="block py-3 px-4 hover:bg-[#004851] rounded-lg transition-colors text-lg font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               معرض الأعمال
-            </Link>
-            <Link 
-              href="#projects" 
-              className="block py-3 px-4 hover:bg-[#004851] rounded-lg transition-colors text-lg font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              مشاريعنا
             </Link>
             <Link 
               href="#contact" 
