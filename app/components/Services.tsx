@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -100,8 +100,7 @@ export default function Services() {
   )
 }
 
-function ServiceCard({ service, index }: { service: Service; index: number }) {
-  const [isHovered, setIsHovered] = useState(false)
+function ServiceCard({ service }: { service: Service; index: number }) {
   const controls = useAnimation()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true })
