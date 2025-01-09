@@ -1,4 +1,4 @@
-import { getConfig } from "@/lib/get_configs";
+// import { getConfig } from "@/lib/get_configs";
 import NavbarComponent from "./NavbarComponent";
 
 export default async function Page() {
