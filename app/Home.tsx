@@ -5,9 +5,8 @@ import Contact from "./components/Contact"
 import EngagingAboutUs from "./components/EngagingAboutUs"
 import FeaturedProjects from "./components/FeaturedProjects"
 import Footer from "./components/Footer"
-import Gallery from "./components/Gallery"
 import Hero from "./components/Hero"
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar/Navbar"
 import Services from "./components/Services"
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
         <AboutUs />
         <FeaturedProjects />
         <Services />
-        <Gallery />
         <EngagingAboutUs />
         <Contact />
         <Footer />

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaUser, FaEnvelope, FaPhone, FaHome, FaComments } from 'react-icons/fa'
+import { FaUser, FaEnvelope, FaPhone, FaComments } from 'react-icons/fa'
 
 export default function ConsultationForm() {
   const [formData, setFormData] = useState({
@@ -91,7 +91,6 @@ export default function ConsultationForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                required
                 placeholder="البريد الإلكتروني"
                 className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               />
@@ -109,26 +108,7 @@ export default function ConsultationForm() {
                 className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               />
             </div>
-            <div className="flex items-center border-b-2 border-[#004851] py-2">
-              <FaHome className="text-[#004851] ml-2 text-2xl" />
-              <select
-                id="projectType"
-                name="projectType"
-                value={formData.projectType}
-                onChange={handleChange}
-                required
-                className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-              >
-                <option value="">اختر نوع المشروع</option>
-                <option value="kitchen">مطبخ</option>
-                <option value="livingRoom">غرفة معيشة</option>
-                <option value="bedroom">غرفة نوم</option>
-                <option value="bathroom">حمام</option>
-                <option value="wholeHouse">منزل كامل</option>
-                <option value="office">مكتب</option>
-                <option value="other">آخر</option>
-              </select>
-            </div>
+            
             <div className="flex items-center border-b-2 border-[#004851] py-2">
               <FaComments className="text-[#004851] ml-2 text-2xl" />
               <textarea
@@ -136,7 +116,7 @@ export default function ConsultationForm() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={4}
+                rows={8}
                 placeholder="اخبرنا المزيد عن مشروعك وأفكارك"
                 className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none resize-none"
               ></textarea>

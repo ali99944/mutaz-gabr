@@ -102,42 +102,42 @@ export default function Contact() {
             </form>
           </div>
           <div className="order-1 lg:order-2">
-            <div className="bg-[#004851] text-white p-8 rounded-lg shadow-md h-full flex flex-col justify-between">
+            <div className="bg-[#004851] text-white p-4 rounded-lg shadow-md h-full flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-bold mb-6">معلومات الاتصال</h3>
-                <p className="mb-8 text-lg">نحن نتطلع للتواصل معك ومساعدتك في تحقيق حلم منزلك المثالي</p>
-                <ul className="space-y-6">
+                <h3 className="text-2xl font-bold mb-6 text-center">معلومات الاتصال</h3>
+                <p className="mb-8 text-sm">نحن نتطلع للتواصل معك ومساعدتك في تحقيق حلم منزلك المثالي</p>
+                <ul className="space-y-4">
                   <li className="flex items-start gap-4">
-                    <FaPhone className="text-2xl mt-1 text-[#DF2935]" />
+                    <FaPhone className="w-6 h-6 mt-1 text-[#DF2935]" />
                     <div>
-                      <h4 className="font-semibold text-xl mb-1">الهاتف</h4>
-                      <p className="text-[#D3D3D3] text-lg hover:underline">
-                        <a href="tel:+201270005969">+201270005969</a>
+                      <h4 className="font-semibold text-sm mb-1">الهاتف</h4>
+                      <p className="text-[#D3D3D3] text-sm hover:underline">
+                        <a href="tel:+201270005969">01270005969</a>
                       </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
-                    <FaEnvelope className="text-2xl mt-1 text-[#DF2935]" />
+                    <FaEnvelope className="w-6 h-6 mt-1 text-[#DF2935]" />
                     <div>
-                      <h4 className="font-semibold text-xl mb-1">البريد الإلكتروني</h4>
-                      <p className="text-[#D3D3D3] text-lg hover:underline">
+                      <h4 className="font-semibold text-sm mb-1">البريد الإلكتروني</h4>
+                      <p className="text-[#D3D3D3] text-sm hover:underline">
                         <a href="mailto:moataz.rabei.gabr2006@gmail.com">moataz.rabei.gabr2006@gmail.com</a>
                       </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
-                    <FaMapMarkerAlt className="text-2xl mt-1 text-[#DF2935]" />
+                    <FaMapMarkerAlt className="w-6 h-6 mt-1 text-[#DF2935]" />
                     <div>
-                      <h4 className="font-semibold text-xl mb-1">العنوان</h4>
-                      <p className="text-[#D3D3D3] text-lg">الشروق سيتي امام فيلا نيو كايرو</p>
+                      <h4 className="font-semibold text-sm mb-1">العنوان</h4>
+                      <p className="text-[#D3D3D3] text-sm">الشروق سيتي امام فيلا نيو كايرو</p>
                     </div>
                   </li>
                 </ul>
               </div>
               <div className="mt-12 border-t border-[#D3D3D3]/20 pt-6">
-                <h4 className="font-semibold text-xl mb-4">ساعات العمل</h4>
-                <p className="text-[#D3D3D3] text-lg">الأحد - الخميس: 9 صباحًا - 6 مساءً</p>
-                <p className="text-[#D3D3D3] text-lg">الجمعة - السبت: 10 صباحًا - 4 مساءً</p>
+                <h4 className="font-semibold text-sm mb-4">ساعات العمل</h4>
+                <p className="text-[#D3D3D3] text-sm">الأحد - الخميس: 9 صباحًا - 6 مساءً</p>
+                <p className="text-[#D3D3D3] text-sm">الجمعة - السبت: 10 صباحًا - 4 مساءً</p>
               </div>
             </div>
           </div>

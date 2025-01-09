@@ -1,6 +1,6 @@
 
 import Contact from '../components/Contact'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer'
 import AboutUsHero from './components/AboutUsHero'
 import OurStory from './components/OurStories'

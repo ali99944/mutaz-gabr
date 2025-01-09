@@ -1,11 +1,10 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import React from 'react'
-import ProjectNavigation from './ProjectNavigation'
 
 // Enhanced mock data for projects
 const projectsData = [
@@ -284,40 +283,14 @@ const projectsData = [
 const categories = ["فلل", "شقق", "مكاتب", "مطاعم", "فنادق", "منازل"]
 
 export default function ProjectsShowcase() {
-  const [activeCategory, setActiveCategory] = useState(categories[0])
   const sectionRefs = useRef(categories.map(() => React.createRef()))
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveCategory(entry.target.id)
-          }
-        })
-      },
-      { threshold: 0.5 }
-    )
 
-    sectionRefs.current.forEach((ref) => {
-      if (ref.current) {
-        observer.observe(ref.current as Element)
-      }
-    })
-
-    return () => {
-      sectionRefs.current.forEach((ref) => {
-        if (ref.current) {
-          observer.unobserve(ref.current as Element)
-        }
-      })
-    }
-  }, [])
 
   return (
     <section className="py-12 bg-white">
       <div className="max-w-full mx-auto px-4 flex">
-        <div className="pr-8 ml-4">
+        <div className="pr-4 ml-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -354,9 +327,9 @@ export default function ProjectsShowcase() {
                           layout="fill"
                           objectFit="cover"
                         />
-                        <div className="absolute top-0 left-0 p-4 flex">
-                          <span className="bg-[#004851] text-white px-2 py-1 mr-2 rounded">{project.area}</span>
-                          <span className="bg-[#DF2935] text-white px-2 py-1 mr-2 rounded">{project.duration}</span>
+                        <div className="absolute top-0 left-0 p-2 flex">
+                          {/* <span className="bg-[#004851] text-white px-2 py-1 mr-2 rounded">{project.area}</span> */}
+                          {/* <span className="bg-[#DF2935] text-white px-2 py-1 mr-2 rounded">{project.duration}</span> */}
                           <span className="bg-[#F5A623] text-slate-800 px-2 py-1 mr-2 rounded">{project.style}</span>
 
                         </div>
@@ -375,9 +348,6 @@ export default function ProjectsShowcase() {
               </div>
             </motion.div>
           ))}
-        </div>
-        <div className="sticky top-32 h-screen">
-          <ProjectNavigation categories={categories} activeCategory={activeCategory} />
         </div>
       </div>
     </section>

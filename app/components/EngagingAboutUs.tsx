@@ -15,7 +15,7 @@ const stats = [
 export default function EngagingAboutUs() {
   const [activeTab, setActiveTab] = useState(0)
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { amount: 0.2 })
 
   const tabs = [
     { title: 'رؤيتنا', content: 'نسعى لأن نكون الخيار الأول في مجال تصميم وتنفيذ المطابخ والديكورات الداخلية، من خلال تقديم حلول مبتكرة وعالية الجودة تلبي تطلعات عملائنا وتتجاوز توقعاتهم.' },

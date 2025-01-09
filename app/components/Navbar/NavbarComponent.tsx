@@ -5,16 +5,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
-export default function Navbar() {
+export default function NavbarComponent({
+    website_name
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  console.log(website_name);
+  
 
   return (
-    <nav className="bg-gradient-to-r from-[#004851] to-[#003840] text-[#D3D3D3] sticky top-0 w-full z-50 shadow-md">
+    <nav className="bg-gradient-to-r from-[#004851] to-[#003840] text-[#D3D3D3] sticky top-0 w-full z-50 shadow">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 flex-row-reverse">
-            <span className="text-2xl font-bold hidden sm:block">Moataz Gabr</span>
+            <span className="text-2xl font-bold">{website_name}</span>
             <Image
               src="/assets/images/studio.png"
               alt="Moataz Gabr Kitchens"
@@ -28,13 +32,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8 flex-row-reverse text-lg">
             <Link 
               href="#contact" 
-              className="bg-[#DF2935] text-white px-6 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+              className="bg-[#DF2935] text-white px-4 py-1 rounded shadow hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
             >
               اتصل بنا
             </Link>
-            <Link href="/projects" className="hover:text-[#DF2935] transition-colors font-medium text-xl">معرض الأعمال</Link>
-            <Link href="/services" className="hover:text-[#DF2935] transition-colors font-medium text-xl">خدماتنا</Link>
-            <Link href="/" className="hover:text-[#DF2935] transition-colors font-medium text-xl">الرئيسية</Link>
+            <Link href="/projects" className="hover:text-[#DF2935] transition-colors font-medium text-lg">معرض الأعمال</Link>
+            <Link href="/services" className="hover:text-[#DF2935] transition-colors font-medium text-lg">خدماتنا</Link>
+            <Link href="/" className="hover:text-[#DF2935] transition-colors font-medium text-lg">الرئيسية</Link>
           </div>
 
           {/* Mobile Menu Button */}

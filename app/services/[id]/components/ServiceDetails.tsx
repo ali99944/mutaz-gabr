@@ -3,9 +3,6 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
-import { FaImages } from 'react-icons/fa'
-import TestimonialCard from '@/app/components/Testimonial'
-import { FaKitchenSet } from 'react-icons/fa6'
 
 interface ServiceFeature {
   icon: React.ReactNode
@@ -92,7 +89,7 @@ export default function ServiceDetails({ service }: { service: ServiceDetails })
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-4 rounded-lg shadow-md text-center"
+                className="bg-white p-4 rounded-lg shadow text-center"
               >
                 <div className="mb-3 flex justify-center text-[#DF2935]">{feature.icon}</div>
                 <h3 className="text-lg font-bold text-[#004851] mb-2">{feature.title}</h3>
@@ -129,7 +126,7 @@ export default function ServiceDetails({ service }: { service: ServiceDetails })
                   width={600}
                   height={400}
                   objectFit="cover"
-                  className="rounded-lg shadow-md"
+                  className="rounded-lg shadow"
                 />
               </div>
               <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
@@ -167,78 +164,55 @@ export default function ServiceDetails({ service }: { service: ServiceDetails })
       </section>
 
       {/* Gallery Card Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="bg-[#004851] text-white rounded-lg shadow-xl overflow-hidden"
+            className="bg-[#004851] text-white rounded-lg shadow overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="p-8 md:p-12 flex flex-col md:flex-row items-center">
-              <div className="md:w-2/3 mb-6 md:mb-0 md:ml-6">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">استكشف معرض أعمالنا</h2>
-                <p className="text-lg mb-6">شاهد مجموعة متنوعة من مشاريعنا السابقة واستلهم أفكارًا لمطبخك الجديد.</p>
-                <button className="bg-[#DF2935] text-white px-6 py-3 rounded-lg text-lg font-bold transition duration-300">
-                  عرض المعرض
-                </button>
-              </div>
-              <div className="md:w-1/3 flex justify-center">
-                <FaImages className="text-9xl opacity-50" />
+            <div className="p-4 md:p-4 flex flex-col md:flex-row items-center justify-center">
+              <div className="md:w-2/3 mb-6 md:mb-0 md:mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">استكشف معرض أعمالنا</h2>
+                <p className="text-sm text-center mb-6">شاهد مجموعة متنوعة من مشاريعنا السابقة واستلهم أفكارًا لمطبخك الجديد.</p>
+                <div className="flex items-center justify-center">
+                  <a href="/projects">
+                  <button 
+                  className="bg-[#DF2935] text-white px-6 py-2 rounded-lg text-xs font-bold transition duration-300"
+                  >
+                    عرض المعرض
+                  </button>
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-[#004851] mb-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-          >
-            آراء عملائنا
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {service.testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="bg-[#004851] text-white rounded-lg shadow-xl overflow-hidden"
+            className="bg-[#004851] text-white rounded-lg shadow overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="p-8 md:p-12 flex flex-col md:flex-row items-center">
-              <div className="md:w-2/3 mb-6 md:mb-0 md:ml-6">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">هل أنت مستعد لتحويل مطبخك إلى تحفة فنية؟</h2>
-                <p className="text-lg mb-6">دعنا نساعدك في تحقيق حلم مطبخك المثالي. اتصل بنا اليوم للحصول على استشارة مجانية.</p>
+            <div className="p-4 md:p-12 flex flex-col md:flex-row items-center justify-center">
+              <div className="md:w-2/3 text-center">
+                <h2 className="text-xl md:text-2xl font-bold mb-4">هل أنت مستعد لتحويل مطبخك إلى تحفة فنية؟</h2>
+                <p className="text-sm mb-6">دعنا نساعدك في تحقيق حلم مطبخك المثالي. اتصل بنا اليوم للحصول على استشارة مجانية.</p>
+                <a href="/get-free-consultation">
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#DF2935] text-white px-6 py-3 rounded-lg text-lg font-bold transition duration-300"
+                  className="bg-[#DF2935] text-white px-6 py-2 rounded-lg text-sm font-bold transition duration-300"
                 >
                   احجز استشارة مجانية
                 </motion.button>
-              </div>
-              <div className="md:w-1/3 flex justify-center">
-                <FaKitchenSet className="text-9xl opacity-50" />
+                </a>
               </div>
             </div>
           </motion.div>

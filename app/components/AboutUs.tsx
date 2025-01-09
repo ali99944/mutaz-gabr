@@ -7,7 +7,7 @@ import { FaMedal, FaHandshake, FaLightbulb, FaUsers } from 'react-icons/fa'
 
 export default function AboutUs() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { amount: 0.2 })
 
   const features = [
     { icon: <FaMedal className="text-4xl text-[#DF2935]" />, title: 'الجودة العالية', description: 'نلتزم بأعلى معايير الجودة في كل مشروع نقوم به' },
@@ -62,8 +62,9 @@ export default function AboutUs() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.6 }}
+              className='flex justify-center'
             >
-              <a href="#contact" className="inline-block bg-[#DF2935] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow-md mt-4">
+              <a href="#contact" className="inline-block bg-[#DF2935] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow mt-4">
                 تواصل معنا لتحويل مساحتك
               </a>
             </motion.div>

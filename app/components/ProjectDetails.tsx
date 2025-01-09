@@ -303,12 +303,16 @@ export default function ProjectDetailsSection() {
                     دعنا نحول أفكارك إلى واقع ملموس. فريقنا المتخصص جاهز لمساعدتك في تحقيق حلمك.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/get-free-consultation">
                     <button className="bg-white text-[#DF2935] px-8 py-4 rounded-lg font-bold text-lg shadow hover:bg-opacity-90 transition-colors duration-300">
                       احجز استشارة مجانية
                     </button>
+                    </a>
+                    <a href="/#contact">
                     <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#004851] transition-colors duration-300">
                       تواصل معنا مباشرة
                     </button>
+                    </a>
                   </div>
                 </motion.div>
               </div>

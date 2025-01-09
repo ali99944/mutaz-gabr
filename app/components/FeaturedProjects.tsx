@@ -15,7 +15,7 @@ interface Project {
 export default function FeaturedProjects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { amount: 0.2 })
 
   const projects: Project[] = [
     {
@@ -92,9 +92,11 @@ export default function FeaturedProjects() {
                 </span>
                 <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
                 <p className="text-[#D3D3D3] mb-4">{project.description}</p>
+                <a href={`/projects/${project.id}`}>
                 <button className="bg-white text-[#004851] px-4 py-2 rounded-lg hover:bg-[#D3D3D3] transition-colors duration-300">
                   عرض التفاصيل
                 </button>
+                </a>
               </motion.div>
             </motion.div>
           ))}
@@ -105,9 +107,11 @@ export default function FeaturedProjects() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <button className="bg-[#DF2935] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow-md">
+          <a href="/projects">
+          <button className="bg-[#DF2935] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow">
             عرض جميع المشاريع
           </button>
+          </a>
         </motion.div>
       </div>
     </section>
