@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Home, Briefcase, Users, FileText, Settings, ChevronRight, ChevronLeft, Grid, Image, List, LogOut } from 'lucide-react'
+import { Home, Briefcase, Users, Settings, ChevronRight, ChevronLeft, Grid, List, LogOut, DatabaseIcon } from 'lucide-react'
 
 export default function AdminSidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false)
@@ -13,9 +13,8 @@ export default function AdminSidebar() {
     { icon: <Users size={24} />, label: 'العملاء', href: '/admin/clients' },
     { icon: <Grid size={24} />, label: 'الخدمات', href: '/admin/services' },
     { icon: <List size={24} />, label: 'الفئات', href: '/admin/categories' },
-    { icon: <Image size={24} />, label: 'معرض الصور', href: '/admin/gallery' },
-    { icon: <FileText size={24} />, label: 'التقارير', href: '/admin/reports' },
     { icon: <Settings size={24} />, label: 'الإعدادات', href: '/admin/settings' },
+    { icons: <DatabaseIcon size={24}/>, label: 'البيانات', href: '/admin/website-data' }
   ]
 
   return (

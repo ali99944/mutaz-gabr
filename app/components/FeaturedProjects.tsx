@@ -1,55 +1,57 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
 
 interface Project {
   id: number
   name: string
   image: string
-  description: string
-  category: string
+  size: 'small' | 'medium' | 'large'
 }
 
 export default function FeaturedProjects() {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
   const ref = useRef(null)
-  const isInView = useInView(ref, { amount: 0.2 })
+  const isInView = useInView(ref, { amount: 0.2, once: true })
 
   const projects: Project[] = [
     {
       id: 1,
-      name: 'مطبخ عصري فاخر',
-      image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80',
-      description: 'تصميم مطبخ حديث بألوان متناسقة ومساحات تخزين ذكية',
-      category: 'مطابخ'
+      name: 'فيلا العائلة السعيدة - القاهرة الجديدة',
+      image: '/assets/home/kitchen.jpg',
+      size: 'large'
     },
     {
       id: 2,
-      name: 'غرفة معيشة أنيقة',
-      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80',
-      description: 'ديكور غرفة جلوس بأسلوب عصري ومريح',
-      category: 'غرف معيشة'
+      name: 'حديقة منزل الدكتور أحمد - الشيخ زايد',
+      image: '/assets/home/balacony.jpg',
+      size: 'medium'
     },
     {
       id: 3,
-      name: 'حمام فندقي راقي',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80',
-      description: 'تصميم حمام فاخر بلمسات رخامية وإضاءة مميزة',
-      category: 'حمامات'
+      name: 'شقة السيد محمود - المعادي',
+      image: '/assets/home/hall1.jpg',
+      size: 'small'
     },
     {
       id: 4,
-      name: 'غرفة نوم هادئة',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80',
-      description: 'تصميم غرفة نوم تجمع بين الراحة والأناقة',
-      category: 'غرف نوم'
+      name: 'مجمع سكني النخيل - 6 أكتوبر',
+      image: '/assets/home/outside.jpg',
+      size: 'small'
+    },
+    {
+      id: 5,
+      name: 'فيلا الدكتورة سارة - التجمع الخامس',
+      image: '/assets/home/living.jpg',
+      size: 'small'
     }
   ]
 
   return (
-    <section id="projects" className="py-20 bg-white text-[#004851]" ref={ref}>
+    <section ref={ref} id="projects" className="py-20 bg-white text-[#004851]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -60,45 +62,9 @@ export default function FeaturedProjects() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">مشاريعنا المميزة</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">نفخر بتقديم مجموعة من أفضل مشاريعنا التي تعكس التزامنا بالجودة والإبداع في كل تفصيل</p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-12 gap-4 auto-rows-[minmax(200px,auto)]">
           {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-lg shadow-md bg-white"
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
-              <div className="relative h-[300px] md:h-[400px]">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#004851]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <motion.div 
-                className="absolute bottom-0 left-0 right-0 p-6 text-white"
-                initial={{ y: '100%' }}
-                animate={{ y: hoveredProject === project.id ? 0 : '100%' }}
-                transition={{ duration: 0.3 }}
-              >
-                <span className="inline-block px-3 py-1 bg-[#DF2935] text-white text-sm font-semibold rounded-full mb-2">
-                  {project.category}
-                </span>
-                <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
-                <p className="text-[#D3D3D3] mb-4">{project.description}</p>
-                <a href={`/projects/${project.id}`}>
-                <button className="bg-white text-[#004851] px-4 py-2 rounded-lg hover:bg-[#D3D3D3] transition-colors duration-300">
-                  عرض التفاصيل
-                </button>
-                </a>
-              </motion.div>
-            </motion.div>
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
         <motion.div 
@@ -107,14 +73,56 @@ export default function FeaturedProjects() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <a href="/projects">
-          <button className="bg-[#DF2935] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow">
-            عرض جميع المشاريع
-          </button>
-          </a>
+          <Link href="/projects" className="inline-flex items-center text-[#DF2935] font-bold hover:underline transition duration-300">
+            <span className="ml-2">عرض جميع المشاريع</span>
+            <ArrowLeft size={20} />
+          </Link>
         </motion.div>
       </div>
     </section>
+  )
+}
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const cardRef = useRef(null)
+  const isCardInView = useInView(cardRef, { once: true, amount: 0.2 })
+
+  const getGridClasses = (size: Project['size']): string => {
+    switch (size) {
+      case 'small': return 'col-span-12 sm:col-span-6 lg:col-span-4 row-span-1'
+      case 'medium': return 'col-span-12 sm:col-span-6 lg:col-span-4 row-span-2'
+      case 'large': return 'col-span-12 lg:col-span-8 row-span-2'
+      default: return 'col-span-12 sm:col-span-6 lg:col-span-4 row-span-1'
+    }
+  }
+
+  return (
+    <motion.div
+      ref={cardRef}
+      className={`${getGridClasses(project.size)} relative overflow-hidden rounded-xl shadow`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isCardInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#004851]/50 to-transparent z-10" />
+      <Image
+        src={project.image}
+        alt={project.name}
+        layout="fill"
+        objectFit="cover"
+        className="transition-transform duration-300 hover:scale-105"
+      />
+      <div className="relative z-20 h-full p-4 flex flex-col justify-end">
+        <div className="flex items-center justify-between">
+          <h3 className="text-sm font-bold text-white flex-1">{project.name}</h3>
+          <Link href={`/projects/${project.id}`}>
+            <span className="text-white text-sm hover:underline">
+              عرض التفاصيل
+            </span>
+          </Link>
+        </div>
+      </div>
+    </motion.div>
   )
 }
 

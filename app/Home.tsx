@@ -2,7 +2,6 @@
 
 import AboutUs from "./components/AboutUs"
 import Contact from "./components/Contact"
-import EngagingAboutUs from "./components/EngagingAboutUs"
 import FeaturedProjects from "./components/FeaturedProjects"
 import Footer from "./components/Footer"
 import Hero from "./components/Hero"
@@ -18,7 +17,6 @@ export default function Home() {
         <AboutUs />
         <FeaturedProjects />
         <Services />
-        <EngagingAboutUs />
         <Contact />
         <Footer />
       </div>
