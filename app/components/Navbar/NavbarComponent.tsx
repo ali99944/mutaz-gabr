@@ -137,7 +137,7 @@ export default function NavbarComponent({ website_name }: { website_name: string
         </AnimatePresence>
       </div>
       {/* Animated Gradient bottom border */}
-      <div className="h-1 w-full bg-gradient-to-r from-[#004851] via-[#DF2935] to-[#003840] background-animate"></div>
+      <div className="h-1 w-full bg-gradient-to-r from-[#004851] via-[#ffbe0b] to-[#003840] background-animate"></div>
     </motion.nav>
   )
 }

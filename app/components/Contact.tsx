@@ -42,8 +42,8 @@ export default function Contact() {
     <section className="py-20 bg-gradient-to-b from-gray-100 to-white" id="contact">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
@@ -53,8 +53,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
           <motion.div
             ref={formRef}
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5 }}
             className="lg:col-span-3 bg-white shadow rounded-lg p-4"
           >
@@ -150,8 +150,8 @@ export default function Contact() {
             )}
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:col-span-2"
           >
@@ -205,8 +205,8 @@ export default function Contact() {
           </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12"
         >
