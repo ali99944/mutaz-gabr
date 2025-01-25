@@ -1,0 +1,8 @@
+model ContactMessage {
+  id Int @id @default(autoincrement())
+  client_id Int
+  client Client @relation(fields: [client_id], references: [id])
+
+  message String
+  sent_at String
+}
