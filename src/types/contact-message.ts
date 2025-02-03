@@ -1,8 +1,9 @@
-import Client from "./client";
 
 interface ContactMessage {
     id: number
-    client: Client
+    name: string
+    email: string
+    phone: string
     message: string
     sent_at: string
 }

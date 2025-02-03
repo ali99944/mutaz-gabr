@@ -9,7 +9,10 @@ const AppRoutes = Object.freeze({
     privacy: '/privacy',
     projectDetails: '/project/:id',
 
-    getFreeConsultation: '/get-free-consultation',
+    getFreeConsultation: '/consultation',
+
+    interior: '/interior',
+    kithen: '/kitchen'
     
 })
 

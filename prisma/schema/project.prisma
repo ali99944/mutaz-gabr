@@ -1,0 +1,30 @@
+enum ProjectCategory {
+    interior
+    kitchen
+}
+
+model ProjectImage {
+    id Int @id @default(autoincrement())
+    name String
+    src String
+
+    project_id Int
+    project Project @relation(fields: [project_id], references: [id])
+}
+
+model Project {
+    id Int @id @default(autoincrement())
+    name String
+    client_name String
+    area_size Float
+    budget Float
+
+    description String
+    specifications String
+    execution_days Int
+    image String
+    gallery ProjectImage[]
+
+    category ProjectCategory
+    sub_category String
+}

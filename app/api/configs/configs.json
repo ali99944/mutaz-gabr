@@ -1,0 +1,22 @@
+{
+  "contact_info": {
+    "phone": "201270005969",
+    "email": "moataz.rabei.gabr2006@gmail.com",
+    "address": "مدينة الشروق..فيلا القوات المسلحة.. الحي التاسع..فيلا ١١٢",
+    "whatsapp": "https://wa.me/+201270005969"
+  },
+  "working_hours": {
+    "all_week": "الأحد - الخميس: 9 صباحًا - 6 مساءً",
+    "weekend": "الجمعة - السبت: 10 صباحًا - 4 مساءً"
+  },
+  "social_media": {
+    "decors_page": "https://www.facebook.com/MoatazGabrDesignStudio?mibextid=ZbWKwL",
+    "kitchen_page": "https://web.facebook.com/MoatazGabrKitchens",
+    "whatsapp": "https://wa.me/+201270005969"
+  },
+  "map_location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.6661300472024!2d31.224127615471!3d30.05115132484714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458409a89a14b0d%3A0x14f6e5c1a8a9a8c0!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sus!4v1625581524562!5m2!1sen!2sus",
+  "features": {
+    "consultationEnabled": false,
+    "contactEnabled": true
+  }
+}

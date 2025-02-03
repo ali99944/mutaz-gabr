@@ -11,20 +11,15 @@ interface CreateContactPayload {
 }
 
 export const createContactMessage = async (data: CreateContactPayload) => {
-    const newClient = await Dao.instance.client.create({
-        data: {
-            name: data.name,
-            phone_number: data.phone_number,
-            email: data.email
-        }
-    })
-
 
     const contact = await Dao.instance.contactMessage.create({
         data: {
-            client_id: newClient.id,
+            name: data.name,
+            phone: data.phone_number,
+            email: data.email,
             message: data.message,
-            sent_at: getCurrentDate()
+            sent_at: getCurrentDate(),
+            type: 'contact'
         }
     })
 
@@ -32,12 +27,9 @@ export const createContactMessage = async (data: CreateContactPayload) => {
 }
 
 export const getContactMessages = async () => {
-    await Promise.resolve(
-        setTimeout(() => {}, 2000)
-    )
     const contactMessages = await Dao.instance.contactMessage.findMany({
-        include: {
-            client: true
+        where: {
+            type: 'contact'
         }
     })
 

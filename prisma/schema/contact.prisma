@@ -1,8 +1,21 @@
 model ContactMessage {
   id Int @id @default(autoincrement())
-  client_id Int
-  client Client @relation(fields: [client_id], references: [id])
-
+  name String
+  email String
+  phone String
   message String
   sent_at String
+
+  status ContactMessageStatus @default(pending)
+  type ContactMessageType
+}
+
+enum ContactMessageStatus {
+  pending
+  closed
+}
+
+enum ContactMessageType {
+  contact
+  consultation
 }
