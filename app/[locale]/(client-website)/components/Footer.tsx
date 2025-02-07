@@ -129,18 +129,16 @@ export default function Footer({ dictionary }: { dictionary: Dictionary }) {
               }
             )}</span>
             <span className="hidden md:inline">-</span>
-            <span>{fillTranslate(dictionary.footer.tax_number, {
-              "tax_number": "609-129-007"
-            })}</span>
+            <span>{dictionary.footer.tax_number}</span>
           </div>
-          <div className="mt-4 flex items-center justify-center">
+          <div className="mt-4 flex items-center justify-center flex-col">
             <a
               href="https://wa.me/+201022088181"
               target="_blank"
               rel="noopener noreferrer"
               className="mr-2 text-sm hover:underline transition-all"
             >
-              {dictionary.footer.developed_by}
+              Developed by Handsa Media
             </a>
             <Image
                 src="/handsa.png"
