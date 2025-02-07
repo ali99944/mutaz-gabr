@@ -6,8 +6,8 @@ import { getDictionary } from "@/src/i18n/dictionaries"
 import { Cairo, Roboto } from "next/font/google"
 
 export const metadata: Metadata = {
-  title: "معتز جابر للتصميم الداخلي",
-  description: "شركة معتز جابر للتصميم الداخلي والمطابخ - تصميم داخلي احترافي وحلول مبتكرة",
+  title: "معتز جبر للتصميم الداخلي",
+  description: "شركة معتز جبر للتصميم الداخلي والمطابخ - تصميم داخلي احترافي وحلول مبتكرة",
 }
 
 const cairo = Cairo({ subsets: ['arabic'] })

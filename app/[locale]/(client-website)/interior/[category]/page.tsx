@@ -5,8 +5,8 @@ import { getDictionary } from "@/src/i18n/dictionaries"
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   return {
-    title: `مشاريع ${params.category} | معتز جابر للتصميم الداخلي`,
-    description: `استعرض مشاريعنا المميزة في فئة ${params.category} - تصاميم إبداعية وحلول مبتكرة من معتز جابر للتصميم الداخلي`,
+    title: `مشاريع ${params.category} | معتز جبر للتصميم الداخلي`,
+    description: `استعرض مشاريعنا المميزة في فئة ${params.category} - تصاميم إبداعية وحلول مبتكرة من معتز جبر للتصميم الداخلي`,
   }
 }
 

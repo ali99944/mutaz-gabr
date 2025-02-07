@@ -56,7 +56,9 @@
             "kitchen_facebook": "Kitchen page",
             "whatsapp": "WhatsApp"
         },
-        "working_hours": "{start_day_of_week} to {end_day_of_week} from {from} - {to}",
+        "working_hours_all_day": "Sunday - Thursday: 9am - 6pm",
+        "working_hours_weekend": "Friday - Saturday: 10am - 4pm",
+        "developed_by": "Developed by Handsa Media",
         "commercial_register": "Commercial register: {register_number}",
         "tax_number": "Tax number: {tax_number}",
         "copyright": "Copyright © {year} Moataz Gabr."
@@ -143,8 +145,8 @@
 
         "follow_on_social_media": {
             "title": "Follow us on social media",
-            "decors_design": "Decors Design",
-            "kitchen_design": "Kitchen Design",
+            "decors_design": "Designs",
+            "kitchen_design": "Kitchens",
             "whatsapp": "WhatsApp"
         }
 

@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import ControlPanelLayout from '../../components/control-panel-layout'
 
 export const metadata: Metadata = {
-  title: 'لوحة التحكم - معتز جابر للتصميم الداخلي',
-  description: 'لوحة التحكم الإدارية لموقع معتز جابر للتصميم الداخلي',
+  title: 'لوحة التحكم - معتز جبر للتصميم الداخلي',
+  description: 'لوحة التحكم الإدارية لموقع معتز جبر للتصميم الداخلي',
 }
 
 export default function AdminLayout({

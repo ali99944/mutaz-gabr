@@ -108,11 +108,11 @@ export default function Footer({ dictionary }: { dictionary: Dictionary }) {
               <ul className="space-y-2">
               <li className="flex items-center space-x-2 rtl:space-x-reverse group ">
                 <Clock className="text-white w-5 h-5" />
-                <span>Sunday - Thursday: 9am - 6pm</span>
+                <span>{dictionary.footer.working_hours_all_day}</span>
               </li>
               <li className="flex items-center space-x-2 rtl:space-x-reverse group ">
                 <Clock className="text-white w-5 h-5" />
-                <span>Friday - Saturday: 10am - 4pm</span>
+                <span>{dictionary.footer.working_hours_weekend}</span>
               </li>
             </ul>
             </div>
@@ -140,7 +140,7 @@ export default function Footer({ dictionary }: { dictionary: Dictionary }) {
               rel="noopener noreferrer"
               className="mr-2 text-sm hover:underline transition-all"
             >
-              تم التطوير بواسطة: هلال هندسة
+              {dictionary.footer.developed_by}
             </a>
             <Image
                 src="/handsa.png"

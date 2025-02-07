@@ -3,9 +3,9 @@ import ContactPage from "./contact-page"
 import { getDictionary } from "@/src/i18n/dictionaries"
 
 export const metadata: Metadata = {
-  title: "اتصل بنا | معتز جابر للتصميم الداخلي",
+  title: "اتصل بنا | معتز جبر للتصميم الداخلي",
   description:
-    "تواصل مع معتز جابر للتصميم الداخلي للاستفسارات وحجز الاستشارات - نحن هنا لمساعدتك في تحويل مساحتك إلى عمل فني",
+    "تواصل مع معتز جبر للتصميم الداخلي للاستفسارات وحجز الاستشارات - نحن هنا لمساعدتك في تحويل مساحتك إلى عمل فني",
 }
 
 export default async function Contact({
