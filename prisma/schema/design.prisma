@@ -1,0 +1,42 @@
+enum DesignCategory {
+    interior
+    kitchen
+    real_estate
+}
+
+enum Privacy {
+    public
+    private
+}
+
+model DesignImage {
+    id Int @id @default(autoincrement())
+    src String
+    name String
+
+    design_id Int
+    design Design @relation(fields: [design_id], references: [id])
+}
+
+model Design {
+    id Int @id @default(autoincrement())
+    name String
+    category DesignCategory
+    sub_category String
+    description String
+
+    connected_project_id Int? @unique
+    connected_project Project? @relation(fields: [connected_project_id], references: [id])
+
+    privacy Privacy
+    area_size Float
+    budget Float
+    amount_of_time String
+    used_materials_content String
+    specifications String
+
+    cover_image String
+    gallery DesignImage[]
+    
+    created_at String
+}

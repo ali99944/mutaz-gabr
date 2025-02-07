@@ -37,9 +37,9 @@ export default function StatisticCounter({ end, title }: StatisticCounterProps) 
   }, [inView, end, controls])
 
   return (
-    <motion.div ref={ref} animate={controls} className="text-center bg-primary p-4 rounded-lg">
-      <motion.span className="text-4xl font-bold text-white">{count}</motion.span>
-      <h3 className="text-xl mt-2">{title}</h3>
+    <motion.div ref={ref} animate={controls} className="text-center bg-white p-4 shadow-sm rounded-lg">
+      <motion.span className="text-3xl font-bold text-primary">{count}</motion.span>
+      <h3 className="text-lg mt-2 text-primary">{title}</h3>
     </motion.div>
   )
 }

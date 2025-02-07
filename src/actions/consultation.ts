@@ -1,3 +1,5 @@
+'use server'
+
 import Dao from "@/lib/prisma"
 import { getCurrentDate } from "../utils/functions/date-helper"
 

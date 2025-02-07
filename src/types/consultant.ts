@@ -4,6 +4,7 @@ interface Consultant {
     email: string
     phone: string
     message: string
+    sent_at: string
 }
 
 export default Consultant

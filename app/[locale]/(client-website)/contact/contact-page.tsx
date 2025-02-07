@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { FaFacebook, FaWhatsapp } from 'react-icons/fa'
 import Dictionary from '@/src/types/dictionary'
+import { createContactMessage } from '@/src/actions/contact'
 
 export default function ContactContent({ dictionary }: { dictionary: Dictionary }) {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ export default function ContactContent({ dictionary }: { dictionary: Dictionary 
     message: '',
   })
 
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prevState => ({ ...prevState, [name]: value }))
@@ -21,10 +23,19 @@ export default function ContactContent({ dictionary }: { dictionary: Dictionary 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Here you would typically send the form data to your server
-    console.log('Form submitted:', formData)
-    // Reset form after submission
-    setFormData({ name: '', email: '', phone: '', message: '' })
+    
+    try {
+      await createContactMessage({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        phone_number: formData.phone
+      })
+
+      setIsSubmitted(true)
+    } catch (error) {
+      alert(error.message)
+    }
   }
 
   return (
@@ -84,7 +95,7 @@ export default function ContactContent({ dictionary }: { dictionary: Dictionary 
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={4}
+                  rows={6}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#004851]"
                   required
                 ></textarea>
@@ -96,6 +107,17 @@ export default function ContactContent({ dictionary }: { dictionary: Dictionary 
                 {dictionary.contact_page.form.submit}
               </button>
             </form>
+
+            {isSubmitted && (
+              <motion.div
+                className="mt-6 p-4 bg-green-600 rounded-lg text-center text-white"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+              >
+                {dictionary.contact_page.form.success_message}
+              </motion.div>
+            )}
           </motion.div>
 
           
@@ -107,11 +129,11 @@ export default function ContactContent({ dictionary }: { dictionary: Dictionary 
             className="space-y-4"
           >
             <div className="bg-white shadow-sm rounded-lg p-4">
-              <h2 className="text-2xl font-semibold mb-6 text-[#004851]">{dictionary.contact_page.contact_information}</h2>
+              <h2 className="text-2xl font-semibold mb-6 text-[#004851]">{dictionary.contact_page.contact_information.title}</h2>
               <ul className="space-y-4">
                 <li className="flex items-center gap-x-4">
                   <MapPin className="text-app-secondary w-5 h-5" />
-                  <span>مدينة الشروق..فيلا القوات المسلحة.. الحي التاسع..فيلا ١١٢</span>
+                  <span>{dictionary.contact_page.contact_information.address}</span>
                 </li>
                 <li className="flex items-center gap-x-4">
                   <Phone className="text-app-secondary w-5 h-5" />

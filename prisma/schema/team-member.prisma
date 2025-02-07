@@ -1,0 +1,7 @@
+model TeamMember {
+    id Int @id @default(autoincrement())
+    name String
+    position String
+    email String
+    created_at String
+}

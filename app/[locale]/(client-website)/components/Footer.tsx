@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Clock, Facebook, Phone } from "lucide-react"
+import { Clock, Facebook, Mail, MapPin, Phone } from "lucide-react"
 import Dictionary from "@/src/types/dictionary"
 import { fillTranslate } from "@/src/utils/functions/translate"
 
@@ -12,17 +12,32 @@ export default function Footer({ dictionary }: { dictionary: Dictionary }) {
           <Image
                 src="/assets/images/studio.png"
                 alt="MG Group Logo"
-                width={180}
-                height={90}
+                width={140}
+                height={60}
                 className="object-contain mb-4"
               />
             <p className="text-sm mb-4">
               {dictionary.footer.bio}
             </p>
             <div className="space-y-2">
-              <p>مدينة الشروق..فيلا القوات المسلحة.. الحي التاسع..فيلا ١١٢</p>
-              <p>{dictionary.footer.phone}: <a href="tel:+201270005969" target="_blank">01270005969</a></p>
-              <p>{dictionary.footer.email}: <a href="mailto:moataz.rabei.gabr2006@gmail.com" target="_blank">moataz.rabei.gabr2006@gmail.com</a></p>
+              <p>
+                <span className="flex items-center gap-x-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>{dictionary.footer.address}</span>
+                </span>
+              </p>
+              <p>
+                <span className="flex items-center gap-x-2">
+                  <Phone className="w-4 h-4" />
+                  <a href="tel:+201270005969" target="_blank">01270005969</a>
+                </span>
+              </p>
+              <p>
+                <span className="flex items-center gap-x-2">
+                  <Mail className="w-4 h-4" />
+                  <a href="mailto:moataz.rabei.gabr2006@gmail.com" target="_blank">moataz.rabei.gabr2006@gmail.com</a>
+                </span>
+              </p>
             </div>
           </div>
           <div>
@@ -93,11 +108,11 @@ export default function Footer({ dictionary }: { dictionary: Dictionary }) {
               <ul className="space-y-2">
               <li className="flex items-center space-x-2 rtl:space-x-reverse group ">
                 <Clock className="text-white w-5 h-5" />
-                <span>الأحد - الخميس: 9 صباحًا - 6 مساءً</span>
+                <span>Sunday - Thursday: 9am - 6pm</span>
               </li>
               <li className="flex items-center space-x-2 rtl:space-x-reverse group ">
                 <Clock className="text-white w-5 h-5" />
-                <span>الجمعة - السبت: 10 صباحًا - 4 مساءً</span>
+                <span>Friday - Saturday: 10am - 4pm</span>
               </li>
             </ul>
             </div>
@@ -115,10 +130,18 @@ export default function Footer({ dictionary }: { dictionary: Dictionary }) {
             )}</span>
             <span className="hidden md:inline">-</span>
             <span>{fillTranslate(dictionary.footer.tax_number, {
-              "tax_number": "007-129-609"
+              "tax_number": "609-129-007"
             })}</span>
           </div>
           <div className="mt-4 flex items-center justify-center">
+            <a
+              href="https://wa.me/+201022088181"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mr-2 text-sm hover:underline transition-all"
+            >
+              تم التطوير بواسطة: هلال هندسة
+            </a>
             <Image
                 src="/handsa.png"
                 alt="Developer Logo"
@@ -126,12 +149,6 @@ export default function Footer({ dictionary }: { dictionary: Dictionary }) {
                 height={4}
                 className="rounded-full object-cover w-40 mb-2 h-12"
               />
-          </div>
-          <div className="flex items-center justify-center gap-x-2">
-            <span className="text-sm text-gray-400">{dictionary.footer.developed_by}</span>
-            <a href="https://www.linkedin.com/in/ali-tarek-ali/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:underline transition-colors">
-              &quot;المهندس علي طارق علي محمد عبد المجيد&quot;
-            </a>
           </div>
         </div>
       </div>

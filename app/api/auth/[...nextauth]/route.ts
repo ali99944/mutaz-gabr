@@ -1,20 +1,21 @@
-// export { GET, POST } from "@/app/(control-panel)/auth";
-
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions, User } from "next-auth";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { PrismaClient } from "@prisma/client";
 import Credentials from "next-auth/providers/credentials";
 
+const prisma = new PrismaClient();
 
 const authOptions: NextAuthOptions = {
+    adapter: PrismaAdapter(prisma),
     session: {
         strategy: 'jwt'
     },
-
     providers: [
         Credentials({
             name: 'Credentials',
             credentials: {
-                username: {
-                    label: 'Username',
+                email: {
+                    label: 'Email',
                     type: 'text',
                     placeholder: 'admin'
                 },
@@ -25,15 +26,24 @@ const authOptions: NextAuthOptions = {
                 }
             },
             async authorize(credentials) {
-                if (credentials?.username === 'admin' && credentials.password === 'password') {
-                    return { id: '1', name: 'Admin', email: '7hNvR@example.com' }
+                const manager = await prisma.manager.findFirst({
+                    where: {
+                        email: credentials?.email,
+                        password: credentials?.password
+                    }
+                });
+
+                if (manager) {
+                    return {
+                        name: manager.name,
+                        email: manager.email,
+                    } as User
                 }
 
                 return null
             }
         })
     ],
-
     pages: {
         signIn: '/admin/login'
     }
@@ -43,3 +53,4 @@ export const { GET, POST } = {
     GET: NextAuth(authOptions),
     POST: NextAuth(authOptions)
 }
+

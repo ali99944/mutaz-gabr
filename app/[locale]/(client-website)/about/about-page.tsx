@@ -5,77 +5,19 @@ import Image from 'next/image'
 import StatisticCounter from '../components/statistics-counter'
 import Link from 'next/link'
 import Dictionary from '@/src/types/dictionary'
+import useGetServerData from '@/src/hooks/use-get-server-data'
+import { getTeamMembers } from '@/src/actions/team-member-action'
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
 }
 
-const teamMembers = [
-  {
-    id: 1,
-    name: "Eng. Moataz Gabr",
-    role: "Chairman",
-    email: "chairman@mgdesigns.pro",
-  },
-  {
-    id: 2,
-    name: "Eng. Eman Mohamed",
-    role: "Planning and Follow-up Manager",
-    email: "eman.mohamed@mgdesigns.pro",
-  },
-  {
-    id: 3,
-    name: "Mr. Mohamed Naguib",
-    role: "Contracts Manager",
-    email: "Marketing@mgdesigns.pro",
-  },
-  {
-    id: 4,
-    name: "Mr. Ayman Bassiuny",
-    role: "Administrative Manager",
-    email: "Ayman.Bassiuny@mgdesigns.pro",
-  },
-  {
-    id: 5,
-    name: "Mr. Ayman Bassiuny",
-    role: "Real Estate Marketing Manager",
-    email: "Real.state.manager@mgdesigns.pro",
-  },
-  {
-    id: 6,
-    name: "Eng. Mahmoud Reda",
-    role: "Execution Department Manager",
-    email: "site.manager@mgdesigns.pro",
-  },
-  {
-    id: 8,
-    name: "Eng. Noha Sarhan",
-    role: "Design Manager",
-    email: "Interior.design.manager@mgdesigns.pro",
-  },
-  {
-    id: 9,
-    name: "Eng. Shorouk Abu El-Khair",
-    role: "Design Engineer",
-    email: "Interior.design.senior@mgdesigns.pro",
-  },
-  {
-    id: 10,
-    name: "Eng. Nada Mohamed",
-    role: "Design Engineer",
-    email: "Interior.design.junior@mgdesigns.pro",
-  },
-  {
-    id: 11,
-    name: "Eng. Mohamed Maher",
-    role: "Kitchen Design Engineer",
-    email: "kitchen.design.manager@mgdesigns.pro",
-  },
-]
 
 export default function AboutPage({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.about_page
+
+  const { data: teamMembers } = useGetServerData(getTeamMembers, [])
 
   return (
     <div className="min-h-screen bg-[#F3F4F6] text-white">
@@ -217,22 +159,50 @@ export default function AboutPage({ dictionary }: { dictionary: Dictionary }) {
             <p className="text-lg text-center mb-8 max-w-3xl mx-auto text-primary">
               {t.getToKnowUs.description}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {t.services.map((service, index) => (
-                <Link href="/services" key={index} className="group relative rounded-lg overflow-hidden shadow-sm">
-                  <Image
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-[300px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/50 flex items-end justify-start p-4 opacity-100 transition-colors duration-300 group-hover:bg-black/70">
-                    <h3 className="text-white text-2xl font-bold">{service.title}</h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
+                  {/* Services Grid */}
+      <section className="py-20 px-4">
+        <div className="mx-auto">
+          {/* <h2 className="text-4xl font-bold text-center mb-8 text-black">خدماتنا</h2>
+          <p className="text-lg text-center mb-8 max-w-3xl mx-auto text-primary">
+            نحن شركة رائدة في مجال التصميم الداخلي، نقدم خدماتنا في مجال التصميم الداخلي والتصميم المعماري والديكورات الداخلية، بالإضافة إلى خدمات تصميم المطابخ والوحدات والديكورات الخارجية. مع سنوات من الخبرة وفريق من المصممين الموهوبين، نسعى دائمًا لتقديم أعلى مستويات الجودة والتميز في كل مشروع.
+          </p> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                title: dictionary.home_page.services.interior_design,
+                image:
+                  "/images/special/1.jpg",
+                  link: '/interior'
+              },
+              {
+                title: dictionary.home_page.services.kitchen_design,
+                image:
+                  "/images/special/4.jpg",
+                  link: '/kitchen'
+              },
+              {
+                title: dictionary.home_page.services.real_estate,
+                image:
+                  "/images/interior/tower.jpg",
+                  link: '/real-estate'
+              },
+            ].map((service, index) => (
+              <Link href={service.link} key={index} className="group relative rounded-lg overflow-hidden shadow-sm">
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  width={600}
+                  height={500}
+                  className="w-full h-[300px] object-fill hover:scale-105 transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-black/50 flex items-end justify-start p-4 opacity-100 transition-colors duration-300 group-hover:bg-black/70">
+                  <h3 className="text-white text-2xl font-bold">{service.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
           </div>
         </section>
       </main>
@@ -265,7 +235,7 @@ export default function AboutPage({ dictionary }: { dictionary: Dictionary }) {
                 className="bg-[#002233] rounded-lg p-4 backdrop-blur-sm"
               >
                 <h3 className="text-xl font-bold text-[#FF0000] mb-2">{member.name}</h3>
-                <p className="text-gray-300 mb-3">{member.role}</p>
+                <p className="text-gray-300 mb-3">{member.position}</p>
                 <a
                   href={`mailto:${member.email}`}
                   className="text-sm text-gray-400 hover:text-[#FF0000] transition-colors"

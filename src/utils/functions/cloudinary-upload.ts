@@ -1,15 +1,31 @@
-import { UploadApiResponse, UploadApiErrorResponse } from "cloudinary";
 import { cloudinary } from "../cloudinary.config";
 
-export const uploadToCloudinary = async (
-  fileUri: string, publicId: string): Promise<UploadApiResponse | UploadApiErrorResponse> => {
+export const uploadToCloudinary = async (file: File) => {
   try {
-    return await cloudinary.uploader.upload(fileUri, {
-        public_id: publicId,
-        resource_type: 'auto'
+    const fileBuffer = await file.arrayBuffer();
+    return new Promise<string>((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        {
+          resource_type: "image",
+          folder: "moataz-gabr-projects",
+        },
+        (error, result) => {
+          if (error) {
+            console.error(error);
+            return reject(error);
+          }
+          if (result) {
+            console.log(result);
+            return resolve(result.secure_url);
+          }
+          reject(new Error("Failed to upload to Cloudinary"));
+        }
+      );
+      uploadStream.end(Buffer.from(fileBuffer));
     });
   } catch (error) {
-    return error;
+    console.error(error);
+    throw error;
   }
 };
 

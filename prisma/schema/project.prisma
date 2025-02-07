@@ -27,4 +27,6 @@ model Project {
 
     category ProjectCategory
     sub_category String
+
+    design Design?
 }

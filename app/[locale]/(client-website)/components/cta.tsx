@@ -10,14 +10,14 @@ export default function CTA() {
 
       <div className="flex flex-col items-center space-y-4 mb-12 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">هل أنت مستعد لتبسيط سير عملك؟</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">هل أنت مستعد لبدء مشروعك؟</h2>
             <p className="mx-auto max-w-[800px] text-primary-foreground/90 md:text-xl">
             دعنا نحول أفكارك إلى تصميم استثنائي. تواصل معنا اليوم لبدء رحلة التصميم الخاصة بك.
             </p>
           </div>
           <div className="flex gap-x-2">
             <Link href={AppRoutes.getFreeConsultation}>
-              <Button size="lg" variant="secondary" className="bg-app-secondary text-white hover:text-app-secondary">
+              <Button size="lg" variant="secondary" className="bg-app-secondary text-white hover:text-app-secondary hover:bg-white">
                 احصل علي استشارة مجانية
               </Button>
             </Link>

@@ -122,7 +122,7 @@ export default function Home({ dictionary }: { dictionary: Dictionary }) {
     
 
       {/* About Section */}
-      <section className="py-20 px-4 bg-primary text-white">
+      <section className="py-8 px-4 ">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -139,7 +139,7 @@ export default function Home({ dictionary }: { dictionary: Dictionary }) {
             </div>
             <div className="relative h-[400px]">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-OnswRq0tIpjLwJwfYXW5Qd5jkRUS0h.png"
+                src="/images/interior/logo.png"
                 alt="About MG Group"
                 fill
                 className="object-fill rounded-lg"
@@ -147,17 +147,16 @@ export default function Home({ dictionary }: { dictionary: Dictionary }) {
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-4">
           <AboutUsSection dictionary={dictionary}/>
           </div>
         </div>
       </section>
 
                   {/* Statistics Section */}
-                  <div className="py-12 px-4 bg-primary text-white">
+                  <div className="mb-8 px-4  text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-app-secondary">{dictionary.home_page.achievments}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <StatisticCounter end={500} title="مشروع مكتمل" />
             <StatisticCounter end={50} title="جائزة تصميم" />
             <StatisticCounter end={15} title="سنوات خبرة" />
@@ -167,17 +166,9 @@ export default function Home({ dictionary }: { dictionary: Dictionary }) {
       </div>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.h2
-            className="text-4xl font-bold text-center mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            {dictionary.home_page.why_choose_us.title}
-          </motion.h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { title: dictionary.home_page.why_choose_us.experience.title, description: dictionary.home_page.why_choose_us.experience.description, icon: <Users className="h-12 w-12 mb-4 text-app-secondary" /> },

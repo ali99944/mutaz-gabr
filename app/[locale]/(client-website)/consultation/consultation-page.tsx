@@ -4,9 +4,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Send } from "lucide-react"
-import { useRouter } from "next/navigation"
-import AppRoutes from "@/src/constants/app_routes"
 import Dictionary from "@/src/types/dictionary"
+import { createConsultation } from "@/src/actions/consultation"
 
 
 const fadeIn = {
@@ -26,7 +25,6 @@ export default function ConsultationPage({ dictionary }: { dictionary: Dictionar
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const router = useRouter()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -36,21 +34,20 @@ export default function ConsultationPage({ dictionary }: { dictionary: Dictionar
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    setIsSubmitted(true)
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      projectType: "",
-      message: "",
-    })
-    setTimeout(() => {
-      setIsSubmitted(false)
-      router.push(AppRoutes.home)
-    }, 3000)
+    try{ 
+      await createConsultation({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        phone_number: formData.phone
+      })
+
+      setIsSubmitted(true)
+    } catch(error) {
+      alert(error.message)
+    }
   }
 
   return (

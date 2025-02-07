@@ -31,11 +31,12 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
   const contactInfo = [
     { icon: FaPhone, label: dictionary.contact_us_component.contact_information.phone, value: '01270005969', href: 'tel:+201270005969' },
     { icon: FaEnvelope, label: dictionary.contact_us_component.contact_information.email, value: 'moataz.rabei.gabr2006@gmail.com', href: 'mailto:moataz.rabei.gabr2006@gmail.com' },
-    { icon: FaMapMarkerAlt, label: dictionary.contact_us_component.contact_information.address, value: 'مدينة الشروق..فيلا القوات المسلحة.. الحي التاسع..فيلا ١١٢' },
+    { icon: FaMapMarkerAlt, label: dictionary.contact_us_component.contact_information.address, value: dictionary.contact_us_component.contact_information.address_value },
   ]
 
   const socialMedia = [
-    { icon: FaFacebookF, href: 'https://www.facebook.com/MoatazGabrDesignStudio', label: 'Facebook' },
+    { icon: FaFacebookF, href: 'https://www.facebook.com/MoatazGabrDesignStudio', label: 'Decors' },
+    { icon: FaFacebookF, href: 'https://www.facebook.com/MoatazGabrDesignStudio', label: 'Kitchen' },
     { icon: FaWhatsapp, href: 'https://wa.me/+201270005969', label: 'WhatsApp' },
   ]
 
@@ -57,7 +58,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 bg-white shadow-sm rounded-lg p-4"
+            className="lg:col-span-3 bg-white shadow-sm border rounded-lg p-4"
           >
             {isSubmitted ? (
               <motion.div
@@ -74,7 +75,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       {dictionary.contact_us_component.form.name}
@@ -132,7 +133,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={4}
+                    rows={6}
                     className="w-full px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-primary focus:ring-0 transition duration-300"
                   ></textarea>
                 </div>
@@ -182,19 +183,17 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
               </div>
               <div className="mt-8 border-t border-[#D3D3D3]/20 pt-6">
                 <h4 className="font-semibold text-sm mb-4">{dictionary.contact_us_component.contact_information.social_contact_title}</h4>
-                <div className="flex justify-center gap-x-4">
+                <div className="flex justify-center gap-x-2">
                   {socialMedia.map((item, index) => (
                     <motion.a
                       key={index}
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="bg-white text-primary p-2 rounded-full"
+                      className="bg-white text-primary p-2 rounded-full flex items-center gap-x-2"
                     >
                       <item.icon className="w-5 h-5" />
-                      <span className="sr-only">{item.label}</span>
+                      <span className="">{item.label}</span>
                     </motion.a>
                   ))}
                 </div>
@@ -202,25 +201,6 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
             </div>
           </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12"
-        >
-          <div className="bg-white shadow-sm rounded-lg overflow-hidden">
-            <div className="aspect-w-16 aspect-h-8">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.6661300472024!2d31.224127615471!3d30.05115132484714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458409a89a14b0d%3A0x14f6e5c1a8a9a8c0!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sus!4v1625581524562!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

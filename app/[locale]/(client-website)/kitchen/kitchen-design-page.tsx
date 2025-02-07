@@ -70,7 +70,7 @@ export default function KitchenDesignPage({ dictionary }: { dictionary: Dictiona
                   }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link href={`/kitchen-design/${index + 1}`}>
+                  <Link href={`/kitchen/${category.value}`}>
                   <div className="relative h-[300px] cursor-pointer">
                     <Image
                       src={category.image || "/placeholder.svg"}
@@ -90,36 +90,7 @@ export default function KitchenDesignPage({ dictionary }: { dictionary: Dictiona
               ))}
             </div>
           </motion.section>
-          <motion.section
-            className="mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl font-semibold mb-6 text-primary">{t.whyChooseUs.title}</h2>
-                <ul className="space-y-4">
-                  {t.whyChooseUs.points.map((point, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-primary ml-2">•</span>
-                      <p>{point}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-q070hb0ZAeTxjv8EFhftQxueXLFeDI.png"
-                  alt="Kitchen Features"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </motion.section>
+
           <motion.section
             className="py-8 text-center"
             initial="hidden"

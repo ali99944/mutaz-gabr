@@ -1,6 +1,7 @@
 'use server'
 
 import Dao from "@/lib/prisma"
+import { uploadToCloudinary } from "../utils/functions/cloudinary-upload"
 
 
 
@@ -13,7 +14,8 @@ export const getProjects = async (type?: 'interior' | 'kitchen', sub_category?: 
             },
 
             include: {
-                gallery: true
+                gallery: true,
+                design: true
             }
         })
         
@@ -29,52 +31,105 @@ export const getProjects = async (type?: 'interior' | 'kitchen', sub_category?: 
     return projects
 }
 
-// const getProjectById = async (id: number) => {
-//         const project = await Dao.instance.project.findFirst({
-//             where: {
-//                 id: id
-//             },
-//             include: {
-//                 gallery: true
-//             }
-//         })
+export const getProjectById = async (id: number) => {
+        const project = await Dao.instance.project.findFirst({
+            where: {
+                id: id
+            },
+            include: {
+                gallery: true,
+                design: true
+            }
+        })
 
-//     return project
-// }
-
-
-
-interface CreatProjectPayload {
-    name: string
-    client_name: string
-    area_size: number
-    budget: number
-    description: string
-    specifications: string
-    execution_days: number
-    category: 'interior' | 'kitchen',
-    sub_category: string
-    // image: File
-    // gallery: File[]
+    return project
 }
 
 
-export const createProject = async (data: CreatProjectPayload) => {
+
+
+export const createProject = async (data: FormData) => {
+    const galleries = data.getAll('gallery')
+    const main_image = data.get('main_image')
+    
+    const main_image_url = await uploadToCloudinary(main_image as File)
 
     const project = await Dao.instance.project.create({
         data: {
-            name: data.name,
-            client_name: data.client_name,
-            area_size: data.area_size,
-            budget: data.budget,
-            description: data.description,
-            specifications: data.specifications,
-            execution_days: data.execution_days,
-            image: "https://res.cloudinary.com/di4kdo5sv/image/upload/v1734226934/eposts/1734226931930.jpg",
-            category: data.category,
-            sub_category: data.sub_category
+            name: data.get('name') as string,
+            client_name: data.get('client_name') as string,
+            area_size: Number(data.get('area_size')),
+            budget: Number(data.get('budget')),
+            description: data.get('description') as string,
+            specifications: data.get('specifications') as string,
+            execution_days: Number(data.get('execution_days')),
+            image: main_image_url,
+            category: data.get('category') as 'interior' | 'kitchen',
+            sub_category: data.get('sub_category') as string
         }
     })
 
+    for(let i = 0; i < galleries.length; i++) {
+        const gallery_image_url = await uploadToCloudinary(galleries[i] as File)
+
+        await Dao.instance.projectImage.create({
+            data: {
+                src: gallery_image_url,
+                name: (galleries[i] as File).name,
+                project_id: project.id
+            }
+        })
+    }
+
     return project
+}
+
+export const updateProject = async (id: number, data: FormData) => {
+    const main_image = data.get('main_image')
+    
+    const main_image_url = await uploadToCloudinary(main_image as File)
+
+    await Dao.instance.project.update({
+        where: {
+            id: id
+        },
+        data: {
+            name: data.get('name') as string,
+            client_name: data.get('client_name') as string,
+            area_size: Number(data.get('area_size')),
+            budget: Number(data.get('budget')),
+            description: data.get('description') as string,
+            specifications: data.get('specifications') as string,
+            execution_days: Number(data.get('execution_days')),
+            image: main_image_url,
+            category: data.get('category') as 'interior' | 'kitchen',
+            sub_category: data.get('sub_category') as string
+        }
+    })
+
+    // for(let i = 0; i < galleries.length; i++) {
+    //     const gallery_image_url = await uploadToCloudinary(galleries[i] as File)
+
+    //     await Dao.instance.projectImage.update({
+    //         where: {
+    //             id: galleries[i]
+    //         },
+    //         data: {
+    //             src: gallery_image_url,
+    //             name: (galleries[i] as File).name,
+    //             project_id: project.id
+    //         }
+    //     })
+    // }
+}
+
+
+export const getProjectsByTitle = async (title: string) => {
+    const projects = await Dao.instance.project.findMany({
+        where: {
+            name: title
+        }
+    })
+
+    return projects
 }

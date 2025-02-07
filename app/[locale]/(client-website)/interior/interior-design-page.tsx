@@ -19,11 +19,11 @@ const categories = [
       { title: "towers", image: "/images/interior/tower.jpg" },
       { title: "chalets", image: "/images/interior/chalet.jpg" },
       { title: "shops", image: "/images/interior/cafe.jpg" },
+      {
+        title: "commercial",
+        image: "/images/interior/commercial.jpg",
+      }
     ],
-  },
-  {
-    title: "commercial",
-    image: "/images/interior/commercial.jpg",
   },
 ]
 
@@ -91,7 +91,7 @@ export default function InteriorDesignPage({ dictionary }: { dictionary: Diction
                 <div key={category.title} className="rounded-lg overflow-hidden">
                   {/* <div className="p-4 text-xl text-primary">{t.categories[category.title].title}</div> */}
                   <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {category.subcategories ? (
+                    {
                       category.subcategories.map((subcat) => (
                         <Link
                           href={`/interior/${subcat.title}`}
@@ -113,21 +113,7 @@ export default function InteriorDesignPage({ dictionary }: { dictionary: Diction
                           </div>
                         </Link>
                       ))
-                    ) : (
-                      <Link href={"#"} className="relative h-96 rounded-lg overflow-hidden md:col-span-2 lg:col-span-3">
-                        <div>
-                          <Image
-                            src={category.image || "/placeholder.svg"}
-                            alt={t.categories[category.title].title}
-                            fill
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                            <h3 className="text-xl font-semibold text-white">{t.categories[category.title].title}</h3>
-                          </div>
-                        </div>
-                      </Link>
-                    )}
+                    }
                   </div>
                 </div>
               ))}

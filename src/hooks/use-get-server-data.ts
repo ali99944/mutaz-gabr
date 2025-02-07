@@ -12,7 +12,10 @@ const useGetServerData = <T>(fn: () => Promise<T>, initialState: T) => {
       setData(result)
       setIsloading(false)
     }catch (error) {
+      console.log(error.message);
+      
       setError((error as Error).message)
+      setIsloading(false)
     }
   }, [fn])
 
