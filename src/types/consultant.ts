@@ -5,6 +5,8 @@ interface Consultant {
     phone: string
     message: string
     sent_at: string
+
+    status: 'pending' | 'closed'
 }
 
 export default Consultant

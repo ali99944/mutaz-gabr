@@ -1,6 +1,0 @@
-model Statistic {
-    id Int @id @default(autoincrement())
-    name String
-    value Int
-    created_at String
-}

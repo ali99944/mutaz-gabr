@@ -2,6 +2,8 @@
 
 import Dao from "@/lib/prisma"
 import { uploadToCloudinary } from "../utils/functions/cloudinary-upload"
+import { checkAuthorization } from "./security"
+import permissions from "../constants/permissions"
 
 
 
@@ -49,6 +51,14 @@ export const createDesignAttachment = async (data: FormData) => {
 }
 
 export const getDesigns = async (category?: string | null, sub_category?: string | null) => {
+    const isAuthorized = await checkAuthorization(
+        permissions.general_permissions.designs.read.value
+    )
+    
+    if(!isAuthorized) {
+        throw new Error("ليس لديك الصلاحية لقراءة التصميمات")
+    }
+
     const designs = await Dao.instance.design.findMany({
         include: {
             connected_project: true,
@@ -63,6 +73,7 @@ export const getDesigns = async (category?: string | null, sub_category?: string
 
     return designs
 }
+
 
 
 export const getInteriorDesigns = async () => {

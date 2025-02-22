@@ -22,6 +22,7 @@ const useServerAction = <T, P>(fn: (params: P) => Promise<T>) => {
       } catch (error) {
         const errorMessage = (error as Error).message;
         setError(errorMessage);
+        setIsloading(false)
         callbacks?.onFailure?.(errorMessage);
       }
     },

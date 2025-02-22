@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import useGetServerData from "@/src/hooks/use-get-server-data"
 import { getDashboardStatistics } from "@/src/actions/dashboard"
+import ErrorComponent from "../components/error-component"
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -33,7 +34,7 @@ const quickActions = [
 
 export default function AdminDashboard() {
 
-  const { data: statistics } = useGetServerData(getDashboardStatistics, {
+  const { data: statistics, error } = useGetServerData(getDashboardStatistics, {
     total_consultation: 0,
     total_contact_messages: 0,
     total_designs: 0,
@@ -44,7 +45,11 @@ export default function AdminDashboard() {
     <div className="min-h-screen bg-gray-50 text-gray-900" dir="rtl">
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        {
+          error ? (
+            <ErrorComponent error={error} />
+          ): (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {[
             { title: "المشاريع", value: statistics.total_projects, icon: Briefcase, color: " text-blue-600" },
             { title: "التصاميم", value: statistics.total_designs, icon: Palette, color: "text-green-600" },
@@ -75,6 +80,8 @@ export default function AdminDashboard() {
             </motion.div>
           ))}
         </div>
+          )
+        }
 
         <Card className="rounded shadow-sm mb-4">
           <CardHeader>

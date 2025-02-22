@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate && node ./src/utils/database-seeder.js"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^17.0.0",
@@ -62,7 +62,7 @@
     "swiper": "^11.1.15",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.24.1"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/node": "^20",

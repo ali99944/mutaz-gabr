@@ -6,6 +6,7 @@ interface ContactMessage {
     phone: string
     message: string
     sent_at: string
+    status: 'pending' | 'closed'
 }
 
 export default ContactMessage

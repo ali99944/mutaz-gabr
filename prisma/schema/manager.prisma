@@ -1,8 +1,25 @@
+enum ManagerRole {
+    admin
+    supervisor
+}
+
+model ManagerPermission {
+    id Int @id @default(autoincrement())
+    name String
+    value String
+
+    manager_id Int
+    manager Manager @relation(fields: [manager_id],references: [id])
+}
+
 model Manager {
     id Int @id @default(autoincrement())
     name String
     email String @unique
     password String
+
+    role ManagerRole
+    permissions ManagerPermission[]
 
     created_at String
 }

@@ -2,6 +2,8 @@
 
 import Dao from "@/lib/prisma"
 import { uploadToCloudinary } from "../utils/functions/cloudinary-upload"
+import { checkAuthorization } from "./security"
+import permissions from "../constants/permissions"
 
 
 
@@ -22,6 +24,11 @@ export const getProjects = async (type?: 'interior' | 'kitchen', sub_category?: 
         return projects
     }
 
+    const isAuthorized = await checkAuthorization(permissions.general_permissions.projects.read.value)
+    if(!isAuthorized) {
+        throw new Error("ليس لديك الصلاحية لقراءة المشاريع")
+    }
+
     const projects = await Dao.instance.project.findMany({
         include: {
             gallery: true
@@ -32,15 +39,20 @@ export const getProjects = async (type?: 'interior' | 'kitchen', sub_category?: 
 }
 
 export const getProjectById = async (id: number) => {
-        const project = await Dao.instance.project.findFirst({
-            where: {
-                id: id
-            },
-            include: {
-                gallery: true,
-                design: true
-            }
-        })
+    const isAuthorized = await checkAuthorization(permissions.general_permissions.projects.read.value)
+    if(!isAuthorized) {
+        throw new Error("ليس لديك الصلاحية لقراءة المشاريع")
+    }
+
+    const project = await Dao.instance.project.findFirst({
+        where: {
+            id: id
+        },
+        include: {
+            gallery: true,
+            design: true
+        }
+    })
 
     return project
 }
@@ -49,6 +61,11 @@ export const getProjectById = async (id: number) => {
 
 
 export const createProject = async (data: FormData) => {
+    const isAuthorized = await checkAuthorization(permissions.general_permissions.projects.create.value)
+    if(!isAuthorized) {
+        throw new Error("ليس لديك الصلاحية لاضافة مشروع")
+    }
+
     const galleries = data.getAll('gallery')
     const main_image = data.get('main_image')
     
@@ -121,6 +138,19 @@ export const updateProject = async (id: number, data: FormData) => {
     //         }
     //     })
     // }
+}
+
+export const deleteProject = async (id: number) => {
+    const isAuthorized = await checkAuthorization(permissions.general_permissions.projects.delete.value)
+    if(!isAuthorized) {
+        throw new Error("ليس لديك الصلاحية لحذف المشروع")
+    }
+
+    await Dao.instance.project.delete({
+        where: {
+            id: id
+        }
+    })
 }
 
 

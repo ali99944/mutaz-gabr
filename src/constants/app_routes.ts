@@ -12,7 +12,13 @@ const AppRoutes = Object.freeze({
     getFreeConsultation: '/consultation',
 
     interior: '/interior',
-    kithen: '/kitchen'
+    kithen: '/kitchen',
+
+    admin: {
+        create_manager: '/admin/managers/new',
+        login: '/admin/login',
+        managers: '/admin/managers',
+    }
     
 })
 

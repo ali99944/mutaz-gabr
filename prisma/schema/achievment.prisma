@@ -1,0 +1,5 @@
+model Achievment {
+    id Int @id
+    name String
+    value String
+}
