@@ -1,8 +1,9 @@
-import Dao from "@/lib/prisma";
+import { PrismaClient } from "@prisma/client";
 
+const prisma = PrismaClient()
 
 async function main() {
-  await Dao.instance.manager.create({
+  await prisma.manager.create({
     data: {
       email: "moataz@gmail.com",
       password: "moataz",
@@ -12,7 +13,7 @@ async function main() {
     },
   });
 
-  await Dao.instance.achievement.createMany({
+  await prisma.achievement.createMany({
     data: [
       {
         name: "First Achievement",
@@ -36,10 +37,10 @@ async function main() {
 
 main()
   .then(async () => {
-    await Dao.instance.$disconnect();
+    await prisma.$disconnect();
   })
   .catch(async (e) => {
     console.error(e);
-    await Dao.instance.$disconnect();
+    await prisma.$disconnect();
     process.exit(1);
   });
