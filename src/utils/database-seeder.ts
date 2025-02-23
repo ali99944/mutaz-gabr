@@ -13,23 +13,27 @@ async function main() {
     },
   });
 
-  await prisma.achievement.createMany({
+  await prisma.achievment.createMany({
     data: [
       {
+        id: 1,
         name: "First Achievement",
-        value: "First Achievement",
+        value: "200",
       },
       {
+        id: 2,
         name: "Second Achievement",
-        value: "Second Achievement",
+        value: "40",
       },
       {
+        id: 3,
         name: "Third Achievement",
-        value: "Third Achievement",
+        value: "100",
       },
       {
+        id: 4,
         name: "Fourth Achievement",
-        value: "Fourth Achievement",
+        value: "50",
       },
     ],
   });
