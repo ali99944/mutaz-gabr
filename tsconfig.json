@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/providers/auth-provider.txs", "src/utils/database-seeder.js"  ],
+, "src/providers/auth-provider.txs", "src/utils/database-seeder.ts"  ],
   "exclude": [
     "node_modules"
   ]

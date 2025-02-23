@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate && node ./src/utils/database-seeder.js"
+    "postinstall": "prisma generate && node --compiler-options '{\"module\":\"CommonJS\"}' ./src/utils/database-seeder.ts"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^17.0.0",
@@ -73,6 +73,7 @@
     "postcss": "^8",
     "prisma": "^6.0.1",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
